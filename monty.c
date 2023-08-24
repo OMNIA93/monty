@@ -1,6 +1,8 @@
 #include "monty.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-execution_env_t execution_env = EXECUTION_ENV_INITIALIZER;
+#define MAX_LINE_LENGTH 256
 
 /**
  * main - Entry point for Monty Interpreter
@@ -10,10 +12,35 @@ execution_env_t execution_env = EXECUTION_ENV_INITIALIZER;
 */
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
-	{
-		usage_error();
-	}
+char line[MAX_LINE_LENGTH];
+FILE *file;
+stack_t *stack = NULL;
+unsigned int counter = 0;
 
-	return (execute_operations(argv[1]));
+if (argc != 2)
+{
+printf(stderr, "USAGE: monty file\n");
+exit(EXIT_FAILURE);
+}
+
+file = fopen(argv[1], "r");
+bus.file = file;
+
+if (!file)
+{
+printf(stderr, "Error: Can't open file %s\n", argv[1]);
+exit(EXIT_FAILURE);
+}
+
+while (fgets(line, sizeof(line), file))
+{
+counter++;
+bus.content = line;
+execute(line, &stack, counter, file);
+}
+
+free_stack(stack);
+close(file);
+
+return (0);
 }

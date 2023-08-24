@@ -77,68 +77,7 @@ typedef struct execution_env
 
 extern execution_env_t execution_env;
 
-/** get_inputs.c functions **/
-FILE *open_file(char *file_name);
-ssize_t read_line(size_t *buffer_size);
-char **tokenize_string(const char *delim);
-
-/** execute_instructions.c functions **/
-void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number);
-int execute_operations(char *file_name);
-int check_mode_comment(char **tokenized_str);
-
-/** update_mode.c function **/
-void update_mode(char *opcode);
-
-/** essential_errors.c functions **/
-void usage_error(void);
-void open_error(char *file_name);
-void malloc_error(void);
-
-/** opcode_errors1.c functions **/
-void invalid_instruction_error(unsigned int line_number);
-void two_elements_error(unsigned int line_number);
-
-/** opcode_errors2.c functions **/
-void empty_stack_error(unsigned int line_number, char *opcode);
-void division_by_zero(unsigned int line_number);
-void ascii_out_of_range(unsigned int line_number, char *opcode);
-void push_non_integer(unsigned int line_number, char *opcode);
-
-/** linked-list.c functions **/
-void print_list(const stack_t *head);
-size_t get_list_length(const stack_t *head);
-stack_t *add_node_at_first(stack_t **head, int n);
-stack_t *get_last_node(stack_t **head);
-stack_t *add_node_at_end(stack_t **head, int n);
-stack_t *delete_first_node(stack_t **head);
-
-/** main_operations.c functions **/
 void push_opcode(stack_t **stack, unsigned int line_number);
 void pall_opcode(stack_t **stack, unsigned int line_number);
-void pint_opcode(stack_t **stack, unsigned int line_number);
-void pop_opcode(stack_t **stack, unsigned int line_number);
-void nop_opcode(stack_t **stack, unsigned int line_number);
 
-/** arithmetic_operations.c functions **/
-void add_opcode(stack_t **stack, unsigned int line_number);
-void sub_opcode(stack_t **stack, unsigned int line_number);
-void div_opcode(stack_t **stack, unsigned int line_number);
-void mul_opcode(stack_t **stack, unsigned int line_number);
-void mod_opcode(stack_t **stack, unsigned int line_number);
-
-/** logical_operators.c functions **/
-void swap_opcode(stack_t **stack, unsigned int line_number);
-void rotl_opcode(stack_t **stack, unsigned int line_number);
-void rotr_opcode(stack_t **stack, unsigned int line_number);
-
-/** ascii_operations.c functions **/
-void pchar_opcode(stack_t **stack, unsigned int line_number);
-void pstr_opcode(stack_t **stack, unsigned int line_number);
-
-/** free.c functions **/
-void free_linked_list(stack_t *head);
-void free_tokenized_string(char **tokenized_str);
-void free_all_and_exit(void);
-
-#endif
+#endif /* MONTY_H */
