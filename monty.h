@@ -1,49 +1,29 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef MONTY_HPP
+# define MONTY_HPP
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <errno.h>
 
-#define _GNU_SOURCE
-
-#include <stdio.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-
-#define UNUSED(x) (void)(x)
-#define SPACE " "
-#define MAX_TOKENIZED_SIZE 3
-#define COMMENT '#'
-#define EXECUTION_ENV_INITIALIZER { NULL, NULL, NULL, NULL, 0 }
-#define STACK "stack"
-#define QUEUE "queue"
-
+# define BUFFER_SIZE 1000
 /**
- * enum Mode - defines the mode of operation for linked list
- *
- * @STACK_MODE: the linked list operates as a stack
- * @QUEUE_MODE: the linked list operates as a queue
- */
-enum Mode
-{
-	STACK_MODE = 0,
-	QUEUE_MODE = 1
-};
-
-/**
- * struct stack_s - doubly linked list re-presentation of a stack (or queue)
+ * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
- * @next: points to the next element of the stack or (queue)
+ * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO
-*/
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
 typedef struct stack_s
 {
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
 
 /**
  * struct instruction_s - opcode and its function
@@ -52,81 +32,86 @@ typedef struct stack_s
  *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
-*/
+ */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+		char *opcode;
+		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
- * struct execution_env - struct to use a group of variables globally
- * @stack: doubly linked list re-presentation of a stack (or queue)
- * @tokenized_str: array of character pointers to the tokenized strings
- * @line_buffer: pointer to buffer that stores opcode
- * @file_pointer: file pointer
- * @mode: stack or queue
-*/
-typedef struct execution_env
+ * struct listOfinst_s - list of listOfinst_t
+ * @inst: elm 1.
+ * @next: elm 2.
+ * Description: Global variable
+ */
+typedef struct listOfinst_s
 {
+	instruction_t *inst;
+	struct listOfinst_s *next;
+} listOfinst_t;
+
+/**
+ * struct global_s - opcode and its function
+ * @stack: elm 1.
+ * @inst: elm 2.
+ * @left: elm 3.
+ * @ln: elm 4.
+ * @fd: elm 5.
+ * @opcodes: elm 6.
+ * @line: elm 7.
+ * @type: elm 8.
+ * Description: Global variable
+ */
+typedef struct global_s
+{
+	int type;
+	char *left;
+	int ln;
 	stack_t *stack;
-	char **tokenized_str, *line_buffer;
-	FILE *file_pointer;
-	int mode;
-} execution_env_t;
+	char    **inst;
+	int     fd;
+	listOfinst_t *opcodes;
+	char    *line;
+} global_t;
+extern global_t Global;
 
-extern execution_env_t execution_env;
-
-FILE *open_file(char *file_name);
-ssize_t read_line(size_t *buffer_size);
-char **tokenize_string(const char *delim);
-
-void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number);
-int execute_operations(char *file_name);
-int check_mode_comment(char **tokenized_str);
-
-void update_mode(char *opcode);
-
-void usage_error(void);
-void open_error(char *file_name);
-void malloc_error(void);
-
-void invalid_instruction_error(unsigned int line_number);
-void two_elements_error(unsigned int line_number);
-
-void empty_stack_error(unsigned int line_number, char *opcode);
-void division_by_zero(unsigned int line_number);
-void ascii_out_of_range(unsigned int line_number, char *opcode);
-void push_non_integer(unsigned int line_number, char *opcode);
-
-void print_list(const stack_t *head);
-size_t get_list_length(const stack_t *head);
-stack_t *add_node_at_first(stack_t **head, int n);
-stack_t *get_last_node(stack_t **head);
-stack_t *add_node_at_end(stack_t **head, int n);
-stack_t *delete_first_node(stack_t **head);
-
-void push_opcode(stack_t **stack, unsigned int line_number);
-void pall_opcode(stack_t **stack, unsigned int line_number);
-void pint_opcode(stack_t **stack, unsigned int line_number);
-void pop_opcode(stack_t **stack, unsigned int line_number);
-void nop_opcode(stack_t **stack, unsigned int line_number);
-
-void add_opcode(stack_t **stack, unsigned int line_number);
-void sub_opcode(stack_t **stack, unsigned int line_number);
-void div_opcode(stack_t **stack, unsigned int line_number);
-void mul_opcode(stack_t **stack, unsigned int line_number);
-void mod_opcode(stack_t **stack, unsigned int line_number);
-
-void swap_opcode(stack_t **stack, unsigned int line_number);
-void rotl_opcode(stack_t **stack, unsigned int line_number);
-void rotr_opcode(stack_t **stack, unsigned int line_number);
-
-void pchar_opcode(stack_t **stack, unsigned int line_number);
-void pstr_opcode(stack_t **stack, unsigned int line_number);
-
-void free_linked_list(stack_t *head);
-void free_tokenized_string(char **tokenized_str);
-void free_all_and_exit(void);
-
+stack_t *add_node_stack(stack_t **head, const int n);
+listOfinst_t	*add_node_inst(listOfinst_t **head, instruction_t *inst);
+char	*get_next_line(int fd);
+size_t	my_strlen(const char *s);
+char	*my_strjoin(char *s1, char *s2);
+char	*my_strchr(const char *s, int c);
+void	*my_memcpy(void *dst, const void *src, size_t n);
+char	**split(char *str, char *charset);
+void    init(char *name);
+int     print(char *str, int fd, int new);
+char	*_strdup(const char *s1);
+void    add_new_inst(char *o, void (*f)(stack_t **s, unsigned int l));
+void    exic(void);
+int     _strncmp(const char *s1, const char *s2, size_t n);
+void    pall(stack_t **stack, unsigned int line_number);
+int     _atoi(char *s);
+char	*_itoa(int n);
+void    free_inst(char **str);
+void    free_all(void);
+void    push(stack_t **stack, unsigned int line_number);
+void    mexit(void);
+void    pint(stack_t **stack, unsigned int line_number);
+void    nop(stack_t **stack, unsigned int line_number);
+void    pop(stack_t **stack, unsigned int line_number);
+size_t  stack_len(const stack_t *h);
+void    swap(stack_t **stack, unsigned int line_number);
+void    add(stack_t **stack, unsigned int line_number);
+void    sub(stack_t **stack, unsigned int line_number);
+void    divv(stack_t **stack, unsigned int line_number);
+void    mul(stack_t **stack, unsigned int line_number);
+void    mod(stack_t **stack, unsigned int line_number);
+void    pchar(stack_t **stack, unsigned int line_number);
+void    pstr(stack_t **stack, unsigned int line_number);
+void	rotl(stack_t **stack, unsigned int line_number);
+void	rotr(stack_t **stack, unsigned int line_number);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+void	stack(stack_t **stack, unsigned int line_number);
+void	queue(stack_t **stack, unsigned int line_number);
 #endif
