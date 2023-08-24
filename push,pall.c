@@ -8,18 +8,14 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 char *arg = bus.arg;
-int num;
-
-if (!arg || !isdigit(*arg))
+if (!arg || !isdigit(*arg) && *arg != '-')
 {
 fprintf(stderr, "L%d: usage: push integer\n", line_number);
 free_all_and_exit(EXIT_FAILURE);
 }
 
-num = atoi(arg);
-add_node_at_first(stack, num);
+add_to_stack(stack, atoi(arg));
 }
-
 /**
  * pall - Opcode pall prints all values on the stack.
  * @stack: Pointer to the top of the stack
