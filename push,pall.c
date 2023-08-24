@@ -1,36 +1,38 @@
 #include "monty.h"
 
 /**
- * push_opcode - Pushes an element onto the stack.
- * @stack: Pointer to the top of the stack.
- * @line_number: The current line number in the file.
+ * push - Opcode push pushes an element to the stack.
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number in the Monty script
  */
-void push_opcode(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
-char *argument = execution_env.tokenized_str[1];
+char *arg = bus.arg;
+int num;
 
-if (!argument || !is_number(argument))
+if (!arg || !isdigit(*arg))
 {
-fprintf(stderr, "L%u: usage: push integer\n", line_number);
-free_all_and_exit();
+dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_number);
+free_all_and_exit(EXIT_FAILURE);
 }
 
-int number = atoi(argument);
-
-if (execution_env.mode == STACK_MODE)
-add_node_at_first(stack, number);
-else if (execution_env.mode == QUEUE_MODE)
-add_node_at_end(stack, number);
+num = atoi(arg);
+add_node_at_first(stack, num);
 }
 
 /**
- * pall_opcode - Prints all values on the stack.
- * @stack: Pointer to the top of the stack.
- * @line_number: The current line number in the file.
+ * pall - Opcode pall prints all values on the stack.
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number in the Monty script
  */
-void pall_opcode(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
-UNUSED(line_number);
+stack_t *current = *stack;
 
-print_list(*stack);
+UNUSED(line_number);
+while (current)
+{
+printf("%d\n", current->n);
+current = current->next;
+}
 }
