@@ -4,6 +4,9 @@
 
 #define MAX_LINE_LENGTH 256
 
+/**
+ * main: the main function of the definition.
+ */
 int main(int argc, char *argv[])
 {
 char line[MAX_LINE_LENGTH];
@@ -13,7 +16,7 @@ unsigned int counter = 0;
 
 if (argc != 2)
 {
-pprintf(stderr, "USAGE: monty file\n");
+fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
 
@@ -22,7 +25,7 @@ bus.file = file;
 
 if (!file)
 {
-pprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 exit(EXIT_FAILURE);
 }
 
@@ -34,7 +37,7 @@ execute(line, &stack, counter, file);
 }
 
 free_stack(stack);
-pclose(file);
+fclose(file);
 
 return (0);
 }

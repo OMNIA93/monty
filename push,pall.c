@@ -12,7 +12,7 @@ int num;
 
 if (!arg || !isdigit(*arg))
 {
-dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_number);
+fprintf(stderr, "L%d: usage: push integer\n", line_number);
 free_all_and_exit(EXIT_FAILURE);
 }
 
