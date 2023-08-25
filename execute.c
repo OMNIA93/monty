@@ -11,7 +11,7 @@ void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number)
 int idx;
 instruction_t instructions_arr[] = {
 {"push", push_opcode},
-{"pall", pall-opcode},
+{"pall", pall_opcode},
 {"pint", pint_opcode},
 {"pop", pop_opcode},
 {"swap", swap_opcode},
