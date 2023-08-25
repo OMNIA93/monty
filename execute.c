@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * get_operation - select to perform a specific operation
+ * get_operate - select to perform a specific operation
  * @opcode: the opcode operation to be performed
  * Return: pointer to function to perform the opcode
  *				 or NULL if the opcode is invalid
 */
-void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number)
+void (*get_operate)(char *opcode)(stack_t **stack, unsigned int line_number)
 {
 int idx;
 instruction_t instructions_arr[] = {
