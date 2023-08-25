@@ -24,7 +24,7 @@ void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"pchar", fpchar},
 		{"pstr", fpst},
 		{"rotl", frotl},
-		{"rotr", rotr},
+		{"rotr", frotr},
 		{NULL, NULL}
 	};
 
