@@ -10,21 +10,21 @@ void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number)
 {
 	int idx;
 	instruction_t instructions_arr[] = {
-		{"push", push},
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},
-		{"sub", sub},
-		{"div", div},
-		{"mul", mul},
-		{"mod", mod},
-		{"pchar", pchar},
-		{"pstr", pst},
-		{"rotl", rotl},
-		{"rotr", rotr},
+		{"fpush", push},
+		{"fpall", pall},
+		{"fpint", pint},
+		{"fpop", pop},
+		{"fswap", swap},
+		{"fadd", add},
+		{"fnop", nop},
+		{"fsub", sub},
+		{"fdiv", div},
+		{"fmul", mul},
+		{"fmod", mod},
+		{"fpchar", pchar},
+		{"fpstr", pst},
+		{"frotl", rotl},
+		{"frotr", rotr},
 		{NULL, NULL}
 	};
 
