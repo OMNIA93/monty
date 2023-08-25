@@ -5,7 +5,7 @@
  * @file_name: file name
  * Return: FILE pointer of the opened file
 */
-FILE *open_file(char *file_name)
+FILE *file_name(char *file_name)
 {
 	FILE *file_pointer;
 
