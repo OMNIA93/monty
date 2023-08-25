@@ -7,16 +7,16 @@
 */
 void swap_opcode(stack_t **stack, unsigned int line_number)
 {
-	int tmp;
+	int h;
 
 	if (get_list_length(*stack) < 2)
 	{
 		two_elements_error(line_number);
 	}
 
-	tmp = (*stack)->n;
+	h = (*stack)->n;
 	(*stack)->n = (*stack)->next->n;
-	(*stack)->next->n = tmp;
+	(*stack)->next->n = h;
 }
 
 /**
@@ -52,21 +52,21 @@ void rotl_opcode(stack_t **stack, unsigned int line_number)
 void rotr_opcode(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current_node;
-	int prev_node_value, tmp;
+	int prev_node_value, h;
 
 	UNUSED(line_number);
 
 	if (!stack || !*stack)
 		return;
 
-	tmp = (*stack)->n;
+	h = (*stack)->n;
 	current_node = (*stack)->next;
 	while (current_node)
 	{
-		prev_node_value = tmp;
+		prev_node_value = h;
 		tmp = current_node->n;
 		current_node->n = prev_node_value;
 		current_node = current_node->next;
 	}
-	(*stack)->n = tmp;
+	(*stack)->n = h;
 }
