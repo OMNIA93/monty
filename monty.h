@@ -87,9 +87,9 @@ void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number);
 int execute_operations(char *file_name);
 int check_mode_comment(char **tokenized_str);
 
-void usage_error(void);
-void open_error(char *file_name);
-void malloc_error(void);
+void error_1(void);
+void error_2(char *file_name);
+void error_3(void);
 
 void invalid_instruction_error(unsigned int line_number);
 void two_elements_error(unsigned int line_number);
