@@ -20,7 +20,7 @@ instruction_t instructions_arr[] = {
 {"sub", sub_opcode},
 {"div", div_opcode},
 {"mul", mul_opcode},
-{"mod", mod_opcode,
+{"mod", mod_opcode},
 {"pchar", pchar_opcode},
 {"pstr", pstr_opcode},
 {"rotl", rotl_opcode},
