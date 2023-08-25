@@ -7,16 +7,16 @@
  */
 void add_opcode(stack_t **stack, unsigned int line_number)
 {
-	int value;
+	int i;
 
 	if (get_list_length(*stack) < 2)
 	{
 		two_elements_error(line_number);
 	}
 
-	value = (*stack)->n;
+	i = (*stack)->n;
 	delete_first_node(stack);
-	(*stack)->n += value;
+	(*stack)->n += i;
 }
 
 /**
@@ -26,17 +26,17 @@ void add_opcode(stack_t **stack, unsigned int line_number)
  */
 void sub_opcode(stack_t **stack, unsigned int line_number)
 {
-	int value;
+	int i;
 
 	if (get_list_length(*stack) < 2)
 	{
 		two_elements_error(line_number);
 	}
 
-	value = (*stack)->n;
+	i = (*stack)->n;
 
 	delete_first_node(stack);
-	(*stack)->n -= value;
+	(*stack)->n -= i;
 }
 
 /**
@@ -46,7 +46,7 @@ void sub_opcode(stack_t **stack, unsigned int line_number)
  */
 void div_opcode(stack_t **stack, unsigned int line_number)
 {
-	int value;
+	int i;
 
 	if (get_list_length(*stack) < 2)
 	{
@@ -57,9 +57,9 @@ void div_opcode(stack_t **stack, unsigned int line_number)
 		division_by_zero(line_number);
 	}
 
-	value = (*stack)->n;
+	i = (*stack)->n;
 	delete_first_node(stack);
-	(*stack)->n /= value;
+	(*stack)->n /= i;
 }
 
 /**
@@ -69,16 +69,16 @@ void div_opcode(stack_t **stack, unsigned int line_number)
  */
 void mul_opcode(stack_t **stack, unsigned int line_number)
 {
-	int value;
+	int i;
 
 	if (get_list_length(*stack) < 2)
 	{
 		two_elements_error(line_number);
 	}
 
-	value = (*stack)->n;
+	i = (*stack)->n;
 	delete_first_node(stack);
-	(*stack)->n *= value;
+	(*stack)->n *= i;
 }
 
 /**
@@ -88,7 +88,7 @@ void mul_opcode(stack_t **stack, unsigned int line_number)
  */
 void mod_opcode(stack_t **stack, unsigned int line_number)
 {
-	int value;
+	int i;
 
 	if (get_list_length(*stack) < 2)
 	{
@@ -100,7 +100,7 @@ void mod_opcode(stack_t **stack, unsigned int line_number)
 		division_by_zero(line_number);
 	}
 
-	value = (*stack)->n;
+	i = (*stack)->n;
 	delete_first_node(stack);
-	(*stack)->n %= value;
+	(*stack)->n %= i;
 }
