@@ -36,11 +36,11 @@ return (NULL);
 }
 
 /**
- * execute_operations - execute the operation of the corresponding opcode
+ * execute_operate - execute the operation of the corresponding opcode
  * @file_name: the file name the contains the opcode
  * Return: EXIT_SUCCESS
 */
-int execute_operations(char *file_name)
+int execute_operate(char *file_name)
 {
 	ssize_t chars_number;
 	size_t buffer_size = 0;
@@ -78,11 +78,11 @@ int execute_operations(char *file_name)
 }
 
 /**
- * check_mode_comment - checks the mode of stack
+ * check_mode - checks the mode of stack
  * @tokenized_str: tokenized string
  * Return: 1 for comment or NULL or change mode, 0 if nothing
 */
-int check_mode_comment(char **tokenized_str)
+int check_mode(char **tokenized_str)
 {
 	if (tokenized_str[0] == NULL || tokenized_str[0][0] == COMMENT)
 	{
