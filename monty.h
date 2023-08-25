@@ -77,7 +77,7 @@ typedef struct execution_env
 
 extern execution_env_t execution_env;
 
-FILE *open_file(char *file_name);
+FILE *file_name(char *file_name);
 ssize_t read_line(size_t *buffer_size);
 char **tokenize_string(const char *delim);
 
@@ -106,26 +106,25 @@ stack_t *get_last_node(stack_t **head);
 stack_t *add_node_at_end(stack_t **head, int n);
 stack_t *delete_first_node(stack_t **head);
 
-/** main_operations.c functions **/
 void push_opcode(stack_t **stack, unsigned int line_number);
 void pall_opcode(stack_t **stack, unsigned int line_number);
 void pint_opcode(stack_t **stack, unsigned int line_number);
 void pop_opcode(stack_t **stack, unsigned int line_number);
 void nop_opcode(stack_t **stack, unsigned int line_number);
 
-/** arithmetic_operations.c functions **/
+
 void add_opcode(stack_t **stack, unsigned int line_number);
 void sub_opcode(stack_t **stack, unsigned int line_number);
 void div_opcode(stack_t **stack, unsigned int line_number);
 void mul_opcode(stack_t **stack, unsigned int line_number);
 void mod_opcode(stack_t **stack, unsigned int line_number);
 
-/** logical_operators.c functions **/
+
 void swap_opcode(stack_t **stack, unsigned int line_number);
 void rotl_opcode(stack_t **stack, unsigned int line_number);
 void rotr_opcode(stack_t **stack, unsigned int line_number);
 
-/** ascii_operations.c functions **/
+
 void pchar_opcode(stack_t **stack, unsigned int line_number);
 void pstr_opcode(stack_t **stack, unsigned int line_number);
 
