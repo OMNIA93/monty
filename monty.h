@@ -77,35 +77,28 @@ typedef struct execution_env
 
 extern execution_env_t execution_env;
 
-/** get_inputs.c functions **/
 FILE *open_file(char *file_name);
 ssize_t read_line(size_t *buffer_size);
 char **tokenize_string(const char *delim);
 
-/** execute_instructions.c functions **/
+void update_mode(char *opcode);
+
 void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number);
 int execute_operations(char *file_name);
 int check_mode_comment(char **tokenized_str);
 
-/** update_mode.c function **/
-void update_mode(char *opcode);
-
-/** essential_errors.c functions **/
 void usage_error(void);
 void open_error(char *file_name);
 void malloc_error(void);
 
-/** opcode_errors1.c functions **/
 void invalid_instruction_error(unsigned int line_number);
 void two_elements_error(unsigned int line_number);
 
-/** opcode_errors2.c functions **/
 void empty_stack_error(unsigned int line_number, char *opcode);
 void division_by_zero(unsigned int line_number);
 void ascii_out_of_range(unsigned int line_number, char *opcode);
 void push_non_integer(unsigned int line_number, char *opcode);
 
-/** linked-list.c functions **/
 void print_list(const stack_t *head);
 size_t get_list_length(const stack_t *head);
 stack_t *add_node_at_first(stack_t **head, int n);
