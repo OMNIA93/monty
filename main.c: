@@ -1,4 +1,0 @@
-n.c:12:2: error: expected expression before ‘stack_t’
-   12 |  stack_t *head = NULL;
-      |  ^~~~~~~
-

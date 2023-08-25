@@ -18,7 +18,7 @@ $
 
 # Command Line History (newest to oldest):
 :x
-|2,0,1692911866,,"x"
+|2,0,1692928200,,"x"
 :x:
 |2,0,1692901675,,"x:"
 :ء
@@ -49,261 +49,378 @@ $
 	vi monty.c
 |3,0,0,1,1,0,1692873179,"vi monty.c"
 ""1	LINE	0
-	global_t Global;
-|3,1,1,1,1,0,1692911862,"global_t Global;"
+	 * Return: always 0
+|3,1,1,1,1,0,1692928182," * Return: always 0"
 "2	LINE	0
-	#include "monty.h"
-|3,0,2,1,1,0,1692911723,"#include \"monty.h\""
+	 * main entry point
+|3,0,2,1,1,0,1692927365," * main entry point"
 "3	LINE	0
-	
-|3,0,3,1,1,0,1692911723,""
+	 * maindd entry point
+|3,0,3,1,1,0,1692927277," * maindd entry point"
 "4	LINE	0
-	/**
-|3,0,4,1,1,0,1692911723,"/**"
+	 * @n: integer value stored in the node
+|3,0,4,1,1,0,1692927013," * @n: integer value stored in the node"
 "5	LINE	0
-	 * push_opcode - Opcode `push` pushes an element to stack in a Monty script
-|3,0,5,1,1,0,1692911723," * push_opcode - Opcode `push` pushes an element to stack in a Monty script"
+	 * @next: points to the next node in the stack
+|3,0,5,1,1,0,1692926878," * @next: points to the next node in the stack"
 "6	LINE	0
-	 * @stack: double pointer to the stack structure stack_t
-|3,0,6,1,1,0,1692911723," * @stack: double pointer to the stack structure stack_t"
+	 * @prev: points to the previous node in the stack
+|3,0,6,1,1,0,1692926876," * @prev: points to the previous node in the stack"
 "7	LINE	0
-	 *         It represents the address of the top element of the stack
-|3,0,7,1,1,0,1692911723," *         It represents the address of the top element of the stack"
+		stack_t *head = NULL;
+|3,0,7,1,1,0,1692926511,"	stack_t *head = NULL;"
 "8	LINE	0
-	 * @line_number: line number in the Monty script
-|3,0,8,1,1,0,1692911722," * @line_number: line number in the Monty script"
+	stack_t *head = NULL;
+|3,0,8,1,1,0,1692924925,"stack_t *head = NULL;"
 "9	LINE	0
-	 */
-|3,0,9,1,1,0,1692911722," */"
+		stack_t *head = NULL;
+|3,0,9,1,1,0,1692924870,"	stack_t *head = NULL;"
 "-	CHAR	0
 	*
 |3,0,36,0,1,0,1692898958,"*"
 
 # File marks:
-'0  2  0  /monty/monty.c
-|4,48,2,0,1692911866,"/monty/monty.c"
-'1  71  0  /monty/push,pall.c
-|4,49,71,0,1692911802,"/monty/push,pall.c"
-'2  30  0  /monty/string2.c
-|4,50,30,0,1692911625,"/monty/string2.c"
-'3  18  0  /monty/stack.c
-|4,51,18,0,1692911526,"/monty/stack.c"
-'4  136  0  /monty/count_word.c
-|4,52,136,0,1692911452,"/monty/count_word.c"
-'5  64  0  /monty/string.c
-|4,53,64,0,1692911277,"/monty/string.c"
-'6  38  0  /monty/init_nam.c
-|4,54,38,0,1692911158,"/monty/init_nam.c"
-'7  70  0  /monty/free_opcodes.c
-|4,55,70,0,1692910970,"/monty/free_opcodes.c"
-'8  70  0  /monty/free_opcodes
-|4,56,70,0,1692910929,"/monty/free_opcodes"
-'9  85  0  /monty/exec.c
-|4,57,85,0,1692910793,"/monty/exec.c"
+'0  9  0  /monty/main.c
+|4,48,9,0,1692928200,"/monty/main.c"
+'1  4  2  /monty/main.c
+|4,49,4,2,1692927390,"/monty/main.c"
+'2  4  2  /monty/main.c
+|4,50,4,2,1692927390,"/monty/main.c"
+'3  5  2  /monty/main.c
+|4,51,5,2,1692927306,"/monty/main.c"
+'4  4  2  /monty/main.c
+|4,52,4,2,1692927306,"/monty/main.c"
+'5  5  2  /monty/main.c
+|4,53,5,2,1692927306,"/monty/main.c"
+'6  4  2  /monty/main.c
+|4,54,4,2,1692927306,"/monty/main.c"
+'7  5  7  /monty/main.c
+|4,55,5,7,1692927118,"/monty/main.c"
+'8  5  7  /monty/main.c
+|4,56,5,7,1692927118,"/monty/main.c"
+'9  5  7  /monty/main.c
+|4,57,5,7,1692927118,"/monty/main.c"
 
 # Jumplist (newest first):
--'  2  0  /monty/monty.c
-|4,39,2,0,1692911866,"/monty/monty.c"
--'  19  0  /monty/monty.c
-|4,39,19,0,1692911854,"/monty/monty.c"
--'  71  0  /monty/push,pall.c
-|4,39,71,0,1692911802,"/monty/push,pall.c"
--'  71  0  /monty/push,pall.c
-|4,39,71,0,1692911802,"/monty/push,pall.c"
--'  1  1  /monty/push,pall.c
-|4,39,1,1,1692911716,"/monty/push,pall.c"
--'  1  1  /monty/push,pall.c
-|4,39,1,1,1692911716,"/monty/push,pall.c"
--'  30  0  /monty/string2.c
-|4,39,30,0,1692911625,"/monty/string2.c"
--'  30  0  /monty/string2.c
-|4,39,30,0,1692911625,"/monty/string2.c"
--'  30  0  /monty/string2.c
-|4,39,30,0,1692911625,"/monty/string2.c"
--'  30  0  /monty/string2.c
-|4,39,30,0,1692911625,"/monty/string2.c"
--'  1  0  /monty/string2.c
-|4,39,1,0,1692911608,"/monty/string2.c"
--'  1  0  /monty/string2.c
-|4,39,1,0,1692911608,"/monty/string2.c"
--'  1  0  /monty/string2.c
-|4,39,1,0,1692911608,"/monty/string2.c"
--'  1  0  /monty/string2.c
-|4,39,1,0,1692911608,"/monty/string2.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  18  0  /monty/stack.c
-|4,39,18,0,1692911526,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  1  0  /monty/stack.c
-|4,39,1,0,1692911512,"/monty/stack.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  136  0  /monty/count_word.c
-|4,39,136,0,1692911452,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  1  0  /monty/count_word.c
-|4,39,1,0,1692911427,"/monty/count_word.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  64  0  /monty/string.c
-|4,39,64,0,1692911277,"/monty/string.c"
--'  1  0  /monty/string.c
-|4,39,1,0,1692911259,"/monty/string.c"
--'  1  0  /monty/string.c
-|4,39,1,0,1692911259,"/monty/string.c"
--'  1  0  /monty/string.c
-|4,39,1,0,1692911259,"/monty/string.c"
--'  1  0  /monty/string.c
-|4,39,1,0,1692911259,"/monty/string.c"
--'  1  0  /monty/string.c
-|4,39,1,0,1692911259,"/monty/string.c"
--'  1  0  /monty/string.c
-|4,39,1,0,1692911259,"/monty/string.c"
+-'  9  0  /monty/main.c
+|4,39,9,0,1692928200,"/monty/main.c"
+-'  4  2  /monty/main.c
+|4,39,4,2,1692928059,"/monty/main.c"
+-'  4  2  /monty/main.c
+|4,39,4,2,1692927390,"/monty/main.c"
+-'  5  2  /monty/main.c
+|4,39,5,2,1692927338,"/monty/main.c"
+-'  5  2  /monty/main.c
+|4,39,5,2,1692927338,"/monty/main.c"
+-'  4  2  /monty/main.c
+|4,39,4,2,1692927306,"/monty/main.c"
+-'  5  7  /monty/main.c
+|4,39,5,7,1692927172,"/monty/main.c"
+-'  4  7  /monty/main.c
+|4,39,4,7,1692927118,"/monty/main.c"
+-'  6  1  /monty/main.c
+|4,39,6,1,1692927050,"/monty/main.c"
+-'  6  1  /monty/main.c
+|4,39,6,1,1692927050,"/monty/main.c"
+-'  6  1  /monty/main.c
+|4,39,6,1,1692927050,"/monty/main.c"
+-'  5  1  /monty/main.c
+|4,39,5,1,1692927050,"/monty/main.c"
+-'  5  1  /monty/main.c
+|4,39,5,1,1692927020,"/monty/main.c"
+-'  19  0  /monty/main.c
+|4,39,19,0,1692926996,"/monty/main.c"
+-'  20  0  /monty/main.c
+|4,39,20,0,1692926996,"/monty/main.c"
+-'  20  0  /monty/main.c
+|4,39,20,0,1692926996,"/monty/main.c"
+-'  20  0  /monty/main.c
+|4,39,20,0,1692926996,"/monty/main.c"
+-'  20  0  /monty/main.c
+|4,39,20,0,1692926996,"/monty/main.c"
+-'  20  0  /monty/main.c
+|4,39,20,0,1692926955,"/monty/main.c"
+-'  21  0  /monty/main.c
+|4,39,21,0,1692926955,"/monty/main.c"
+-'  21  0  /monty/main.c
+|4,39,21,0,1692926955,"/monty/main.c"
+-'  21  0  /monty/main.c
+|4,39,21,0,1692926955,"/monty/main.c"
+-'  21  0  /monty/main.c
+|4,39,21,0,1692926955,"/monty/main.c"
+-'  12  14  /monty/main.c
+|4,39,12,14,1692926863,"/monty/main.c"
+-'  13  14  /monty/main.c
+|4,39,13,14,1692926863,"/monty/main.c"
+-'  13  14  /monty/main.c
+|4,39,13,14,1692926863,"/monty/main.c"
+-'  14  14  /monty/main.c
+|4,39,14,14,1692926863,"/monty/main.c"
+-'  13  14  /monty/main.c
+|4,39,13,14,1692926863,"/monty/main.c"
+-'  14  14  /monty/main.c
+|4,39,14,14,1692926863,"/monty/main.c"
+-'  13  14  /monty/main.c
+|4,39,13,14,1692926863,"/monty/main.c"
+-'  14  14  /monty/main.c
+|4,39,14,14,1692926863,"/monty/main.c"
+-'  13  14  /monty/main.c
+|4,39,13,14,1692926863,"/monty/main.c"
+-'  14  14  /monty/main.c
+|4,39,14,14,1692926863,"/monty/main.c"
+-'  15  14  /monty/main.c
+|4,39,15,14,1692926819,"/monty/main.c"
+-'  16  14  /monty/main.c
+|4,39,16,14,1692926819,"/monty/main.c"
+-'  16  14  /monty/main.c
+|4,39,16,14,1692926819,"/monty/main.c"
+-'  17  14  /monty/main.c
+|4,39,17,14,1692926819,"/monty/main.c"
+-'  16  14  /monty/main.c
+|4,39,16,14,1692926819,"/monty/main.c"
+-'  17  14  /monty/main.c
+|4,39,17,14,1692926819,"/monty/main.c"
+-'  16  14  /monty/main.c
+|4,39,16,14,1692926819,"/monty/main.c"
+-'  17  14  /monty/main.c
+|4,39,17,14,1692926819,"/monty/main.c"
+-'  16  14  /monty/main.c
+|4,39,16,14,1692926819,"/monty/main.c"
+-'  17  14  /monty/main.c
+|4,39,17,14,1692926819,"/monty/main.c"
+-'  4  2  /monty/main.c
+|4,39,4,2,1692926760,"/monty/main.c"
+-'  4  2  /monty/main.c
+|4,39,4,2,1692926760,"/monty/main.c"
+-'  4  2  /monty/main.c
+|4,39,4,2,1692926760,"/monty/main.c"
+-'  4  2  /monty/main.c
+|4,39,4,2,1692926728,"/monty/main.c"
+-'  14  0  /monty/main.c
+|4,39,14,0,1692926464,"/monty/main.c"
+-'  17  0  /monty/main.c
+|4,39,17,0,1692926464,"/monty/main.c"
+-'  15  0  /monty/main.c
+|4,39,15,0,1692926464,"/monty/main.c"
+-'  18  0  /monty/main.c
+|4,39,18,0,1692926464,"/monty/main.c"
+-'  15  0  /monty/main.c
+|4,39,15,0,1692926464,"/monty/main.c"
+-'  18  0  /monty/main.c
+|4,39,18,0,1692926464,"/monty/main.c"
+-'  15  0  /monty/main.c
+|4,39,15,0,1692926464,"/monty/main.c"
+-'  18  0  /monty/main.c
+|4,39,18,0,1692926464,"/monty/main.c"
+-'  14  0  /monty/main.c
+|4,39,14,0,1692926464,"/monty/main.c"
+-'  17  0  /monty/main.c
+|4,39,17,0,1692926464,"/monty/main.c"
+-'  15  0  /monty/main.c
+|4,39,15,0,1692926464,"/monty/main.c"
+-'  18  0  /monty/main.c
+|4,39,18,0,1692926464,"/monty/main.c"
+-'  17  0  /monty/main.c
+|4,39,17,0,1692926464,"/monty/main.c"
+-'  8  0  /monty/main.c
+|4,39,8,0,1692925817,"/monty/main.c"
+-'  10  0  /monty/main.c
+|4,39,10,0,1692925817,"/monty/main.c"
+-'  11  0  /monty/main.c
+|4,39,11,0,1692925817,"/monty/main.c"
+-'  9  0  /monty/main.c
+|4,39,9,0,1692925817,"/monty/main.c"
+-'  11  0  /monty/main.c
+|4,39,11,0,1692925817,"/monty/main.c"
+-'  10  0  /monty/main.c
+|4,39,10,0,1692925817,"/monty/main.c"
+-'  12  0  /monty/main.c
+|4,39,12,0,1692925817,"/monty/main.c"
+-'  9  0  /monty/main.c
+|4,39,9,0,1692925817,"/monty/main.c"
+-'  11  0  /monty/main.c
+|4,39,11,0,1692925817,"/monty/main.c"
+-'  10  0  /monty/main.c
+|4,39,10,0,1692925817,"/monty/main.c"
+-'  12  0  /monty/main.c
+|4,39,12,0,1692925817,"/monty/main.c"
+-'  9  0  /monty/main.c
+|4,39,9,0,1692925817,"/monty/main.c"
+-'  11  0  /monty/main.c
+|4,39,11,0,1692925817,"/monty/main.c"
+-'  10  0  /monty/main.c
+|4,39,10,0,1692925817,"/monty/main.c"
+-'  12  0  /monty/main.c
+|4,39,12,0,1692925817,"/monty/main.c"
+-'  9  0  /monty/main.c
+|4,39,9,0,1692925817,"/monty/main.c"
+-'  11  0  /monty/main.c
+|4,39,11,0,1692925817,"/monty/main.c"
+-'  10  0  /monty/main.c
+|4,39,10,0,1692925817,"/monty/main.c"
+-'  12  0  /monty/main.c
+|4,39,12,0,1692925817,"/monty/main.c"
+-'  12  0  /monty/main.c
+|4,39,12,0,1692925817,"/monty/main.c"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
+-'  3  15  /monty/main.c:
+|4,39,3,15,1692925288,"/monty/main.c:"
 
 # History of marks within files (newest to oldest):
+
+> /monty/main.c
+	*	1692928184	0
+	"	9	0
+	.	8	0
+	+	2	0
+	+	9	0
+	+	2	21
+	+	11	0
+	+	11	22
+	+	13	0
+	+	11	0
+	+	13	0
+	+	13	1
+	+	13	0
+	+	13	22
+	+	11	14
+	+	13	0
+	+	11	0
+	+	13	0
+	+	2	0
+	+	13	0
+	+	11	1
+	+	13	0
+	+	11	22
+	+	11	0
+	+	6	45
+	+	5	3
+	+	12	14
+	+	6	0
+	+	12	13
+	+	12	0
+	+	11	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	15	19
+	+	17	0
+	+	18	0
+	+	19	0
+	+	6	7
+	+	5	8
+	+	6	0
+	+	3	3
+	+	5	0
+	+	3	3
+	+	4	21
+	+	11	20
+	+	8	0
+
+> /monty/main.c:
+	*	1692925285	0
+	"	3	15
+	^	3	16
+	.	3	16
+	+	3	16
+	a	1	0
+
+> /monty/betty
+	*	1692923695	0
+	"	1	0
+
+> /monty/monty.h
+	*	1692922099	0
+	"	84	0
+	^	117	6
+	.	117	5
+	+	1	19
+	+	1	13
+	+	1	15
+	+	1	5
+	+	1	177
+	+	1	0
+	+	1	15
+	+	1	5
+	+	1	0
+	+	1	13
+	+	1	43
+	+	1	15
+	+	1	0
+	+	1	12
+	+	1	0
+	+	1	1
+	+	1	0
+	+	1	15
+	+	1	0
+	+	1	5
+	+	1	0
+	+	1	15
+	+	1	20
+	+	1	0
+	+	1	5
+	+	1	0
+	+	1	5
+	+	1	0
+	+	1	15
+	+	1	77
+	+	1	31
+	+	1	36
+	+	1	34
+	+	1	0
+	+	1	50
+	+	1	0
+	+	1	27
+	+	1	0
+	+	1	16
+	+	1	32
+	+	1	39
+	+	1	0
+	+	1	15
+	+	1	5
+	+	1	0
+	+	1	15
+	+	1	5
+	+	1	0
+	+	1	17
+	+	117	5
 
 > /monty/monty.c
 	*	1692911864	0
@@ -501,62 +618,6 @@ $
 	^	85	1
 	.	85	0
 	+	85	0
-
-> /monty/monty.h
-	*	1692910512	0
-	"	117	5
-	^	117	6
-	.	117	5
-	+	1	19
-	+	1	13
-	+	1	15
-	+	1	5
-	+	1	177
-	+	1	0
-	+	1	15
-	+	1	5
-	+	1	0
-	+	1	13
-	+	1	43
-	+	1	15
-	+	1	0
-	+	1	12
-	+	1	0
-	+	1	1
-	+	1	0
-	+	1	15
-	+	1	0
-	+	1	5
-	+	1	0
-	+	1	15
-	+	1	20
-	+	1	0
-	+	1	5
-	+	1	0
-	+	1	5
-	+	1	0
-	+	1	15
-	+	1	77
-	+	1	31
-	+	1	36
-	+	1	34
-	+	1	0
-	+	1	50
-	+	1	0
-	+	1	27
-	+	1	0
-	+	1	16
-	+	1	32
-	+	1	39
-	+	1	0
-	+	1	15
-	+	1	5
-	+	1	0
-	+	1	15
-	+	1	5
-	+	1	0
-	+	1	17
-	+	117	5
 
 > /monty/call.c
 	*	1692904658	0
@@ -1219,18 +1280,3 @@ $
 	^	14	1
 	.	14	0
 	+	14	0
-
-> /alx-low_level_programming/0x18-dynamic_libraries/0-strcat.o
-	*	1692622758	0
-	"	1	0
-
-> /alx-low_level_programming/0x18-dynamic_libraries/0-strcat.c
-	*	1692622720	0
-	"	19	0
-	^	19	1
-	.	19	0
-	+	19	0
-
-> /alx-low_level_programming/0x18-dynamic_libraries/0-memset.o
-	*	1692622650	0
-	"	1	0
