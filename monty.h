@@ -95,7 +95,7 @@ void invalid_instruction_error(unsigned int line_number);
 void two_elements_error(unsigned int line_number);
 
 void pint_error(unsigned int line_number, char *opcode);
-void pop_empty_stack_error(unsigned int line_number, char *opcode);
+void empty_stack_error(unsigned int line_number, char *opcode);
 void division_by_zero(unsigned int line_number);
 void ascii_out_of_range(unsigned int line_number, char *opcode);
 void push_non_integer(unsigned int line_number, char *opcode);
