@@ -14,7 +14,7 @@ if (argc != 2)
 {
 error_1();
 }
-  
+
 return (execute_operate(argv[1]));
 }
 /**
