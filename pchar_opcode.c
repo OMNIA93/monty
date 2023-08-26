@@ -9,7 +9,7 @@ void pchar_opcode(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
 	{
-		stack_error(line_number, execution_env.tokenized_str[0]);
+		strerror(line_number, execution_env.tokenized_str[0]);
 	}
 
 	if (!isascii((*stack)->n))
