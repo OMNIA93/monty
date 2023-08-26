@@ -77,7 +77,7 @@ typedef struct execution_env
 
 extern execution_env_t execution_env;
 
-FILE *file_name(char *file_name);
+FILE *open_file(char *file_name);
 ssize_t read_line(size_t *buffer_size);
 char **tokenize_string(const char *delim);
 
