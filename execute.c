@@ -57,7 +57,7 @@ int execute_operate(char *file_name)
 		execute_env.tokenized_str = tokenize_string(SPACE);
 		tokenized_str = execute_env.tokenized_str;
 
-		if (check_mode_comment(tokenized_str))
+		if (check_mode(tokenized_str))
 			continue;
 
 		opcode_func = get_operate(tokenized_str[0]);
