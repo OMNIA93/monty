@@ -7,6 +7,7 @@ void error_1(void)
 {
 fprintf(stderr, "USAGE: monty file\n");
 free_all_and_exit();
+  
 }
 
 /**
