@@ -84,7 +84,7 @@ char **tokenize_string(const char *delim);
 void update_mode(char *opcode);
 
 void get_operate(stack_t **stack, unsigned int line_number);
-int execute_operate)(char *file_name);
+int execute_operate(char *file_name);
 int check_mode(char **tokenized_str);
 
 void error_1(void);
