@@ -48,14 +48,14 @@ int execute_operate(char *file_name)
 	char **tokenized_str;
 	void (*opcode_func)(stack_t **stack, unsigned int line_number);
 
-	execution_env.file_pointer = open_file(file_name);
+	execute_env.file_pointer = open_file(file_name);
 
 	while ((chars_num = read_line(&buffer_size)) != -1)
 	{
 		line_num++;
-		execution_env.line_buffer[chars_number - 1] = '\0';
-		execution_env.tokenized_str = tokenize_string(SPACE);
-		tokenized_str = execution_env.tokenized_str;
+		execute_env.line_buffer[chars_number - 1] = '\0';
+		execute_env.tokenized_str = tokenize_string(SPACE);
+		tokenized_str = execute_env.tokenized_str;
 
 		if (check_mode_comment(tokenized_str))
 			continue;
@@ -65,14 +65,14 @@ int execute_operate(char *file_name)
 		{
 			invalid_instruction_error(line_num);
 		}
-		opcode_func(&execution_env.stack, line_num);
+		opcode_func(&execute_env.stack, line_num);
 
-		free_tokenized_string(execution_env.tokenized_str);
+		free_tokenized_string(execute_env.tokenized_str);
 	}
 
-	free(execution_env.line_buffer);
-	free_linked_list(execution_env.stack);
-	fclose(execution_env.file_pointer);
+	free(execute_env.line_buffer);
+	free_linked_list(execute_env.stack);
+	fclose(execute_env.file_pointer);
 
 	return (EXIT_SUCCESS);
 }
@@ -86,14 +86,14 @@ int check_mode(char **tokenized_str)
 {
 	if (tokenized_str[0] == NULL || tokenized_str[0][0] == COMMENT)
 	{
-		free_tokenized_string(execution_env.tokenized_str);
+		free_tokenized_string(execute_env.tokenized_str);
 		return (1);
 	}
 
 	if (!strcmp(tokenized_str[0], STACK) || !strcmp(tokenized_str[0], QUEUE))
 	{
 		update_mode(tokenized_str[0]);
-		free_tokenized_string(execution_env.tokenized_str);
+		free_tokenized_string(execute_env.tokenized_str);
 		return (1);
 	}
 
