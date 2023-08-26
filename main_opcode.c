@@ -15,13 +15,7 @@ if (!arg || (!isdigit(*arg) && *arg != '-'))
 fprintf(stderr, "L%d: usage: push integer\n", line_number);
 add_node_at_first(stack, atoi(arg));
 }
-void free_all_and_exit_with_success(void);
-{
-exit(EXIT_SUCCESS);
-}
-void free_all_and_exit_with_failure(void);
-{
-exit(EXIT_FAILURE);
+free_all_and_exit();
 }
 /**
  * pall_opcode - Opcode `pall` prints all the value of the
