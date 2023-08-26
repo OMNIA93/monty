@@ -6,7 +6,7 @@
  * Return: pointer to function to perform the opcode
  *				 or NULL if the opcode is invalid
 */
-void (*get_operate(char *opcode))(stack_t **stack, unsigned int line_num)
+void (*get_operate(char *opcode))(stack_t **stack, unsigned int line_num);
 {
 int idx;
 instruction_t instructions_arr[] = {
@@ -29,9 +29,12 @@ instruction_t instructions_arr[] = {
 };
 
 for (idx = 0; instructions_arr[idx].opcode; idx++)
+{
 if (!strcmp(instructions_arr[idx].opcode, opcode))
+{
 return (instructions_arr[idx].f);
-
+}
+}
 return (NULL);
 }
 
