@@ -13,7 +13,7 @@ FILE *file_name(char *file_name)
 
 	if (file_pointer == NULL)
 	{
-		open_error(file_name);
+		error_2(file_name);
 	}
 
 	return (file_pointer);
@@ -50,7 +50,7 @@ char **tokenize_string(const char *delim)
 	tokenized_str = malloc(sizeof(char *) * MAX_TOKENIZED_SIZE);
 	if (tokenized_str == NULL)
 	{
-		malloc_error();
+		error_3();
 	}
 
 	token = strtok(execution_env.line_buffer, delim);
@@ -59,7 +59,7 @@ char **tokenize_string(const char *delim)
 		tokenized_str[idx] = malloc(strlen(token) + 1);
 		if (tokenized_str[idx] == NULL)
 		{
-			malloc_error();
+			error_3();
 		}
 
 		strcpy(tokenized_str[idx], token);
