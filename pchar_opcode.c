@@ -7,17 +7,17 @@
  */
 void pchar_opcode(stack_t **stack, unsigned int line_number)
 {
-	if (!stack || !*stack)
-	{
-		empty_stack_error(line_number, execution_env.tokenized_str[0]);
-	}
+if (!stack || !*stack)
+{
+empty_stack_error(line_number, execution_env.tokenized_str[0]);
+}
 
-	if (!isascii((*stack)->n))
-	{
-		ascii_out_of_range(line_number, execution_env.tokenized_str[0]);
-	}
+if (!isascii((*stack)->n))
+{
+ascii_out_of_range(line_number, execution_env.tokenized_str[0]);
+}
 
-	printf("%c\n", (*stack)->n);
+printf("%c\n", (*stack)->n);
 }
 
 /**
