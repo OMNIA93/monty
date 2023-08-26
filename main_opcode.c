@@ -43,7 +43,6 @@ UNUSED(line_number);
 
 if (!stack || !*stack)
 return;
-	
 print_list(*stack);
 }
 
