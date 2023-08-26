@@ -58,11 +58,10 @@ void pop_opcode(stack_t **stack, unsigned int line_number)
 {
 if (!stack || !*stack)
 {
-pint_error(line_number);
-free_all_and_exit();
-}
-
-delete_first_node(stack);
+	empty_stack_error(line_number, execution_env.tokenized_str[0]);
+	free_all_and_exit();
+	}
+	delete_first_node(stack);
 }
 
 /**
