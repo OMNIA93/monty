@@ -64,7 +64,7 @@ void rotr_opcode(stack_t **stack, unsigned int line_number)
 	while (current_node)
 	{
 		prev_node_value = h;
-		tmp = current_node->n;
+		h = current_node->n;
 		current_node->n = prev_node_value;
 		current_node = current_node->next;
 	}
