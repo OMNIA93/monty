@@ -43,7 +43,7 @@ return (NULL);
  * @file_name: the file name the contains the opcode
  * Return: EXIT_SUCCESS
 */
-int execute_operate(char *file_name)
+int execute_operate(char **file_name)
 {
 	ssize_t chars_number;
 	size_t buffer_size = 0;
