@@ -45,40 +45,24 @@ return (NULL);
 */
 int execute_operate(char *file_name)
 {
-	ssize_t chars_number;
-	size_t buffer_size = 0;
-	unsigned int line_num = 0;
-	char **tokenized_str;
-	void (*opcode_func)(stack_t **stack, unsigned int line_num);
+FILE *file = open_file(file_name);
+char *line = NULL;
+size_t len = 0;
+ssize_t chars_read;
+unsigned int line_number = 0;
 
-	execution_env.file_pointer = open_file(file_name);
-
-	while ((chars_number = read_line(&buffer_size)) != -1)
-	{
-		line_num++;
-		execution_env.line_buffer[chars_number - 1] = '\0';
-		execution_env.tokenized_str = tokenize_string(SPACE);
-		tokenized_str = execution_env.tokenized_str;
-
-		if (check_mode(tokenized_str))
-			continue;
-
-		opcode_func = get_operate(tokenized_str[0]);
-		if (opcode_func == NULL)
-		{
-			invalid_instruction_error(line_num);
-		}
-		opcode_func(&execution_env.stack, line_num);
-
-		free_tokenized_string(execution_env.tokenized_str);
-	}
-
-	free(execution_env.line_buffer);
-	free_linked_list(execution_env.stack);
-	fclose(execution_env.file_pointer);
-
-	return (EXIT_SUCCESS);
+while ((chars_read = getline(&line, &len, file)) != -1)
+{
+line_number++;
+/* Process the line here */
+/* Example: parse_line(line, line_number); */
 }
+
+free(line);
+fclose(file);
+
+return EXIT_SUCCESS;
+}	
 
 /**
  * check_mode - checks the mode of stack
