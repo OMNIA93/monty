@@ -56,7 +56,7 @@ int execute_operate(char *file_name)
 	while ((chars_num = read_line(&buffer_size)) != -1)
 	{
 		line_num++;
-		execute_env.line_buffer[chars_number - 1] = '\0';
+		execute_env.line_buffer[chars_num - 1] = '\0';
 		execute_env.tokenized_str = tokenize_string(SPACE);
 		tokenized_str = execute_env.tokenized_str;
 
