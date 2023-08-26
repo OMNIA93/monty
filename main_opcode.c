@@ -58,7 +58,7 @@ void pop_opcode(stack_t **stack, unsigned int line_number)
 {
 if (!stack || !*stack)
 {
-pint_error(line_number, execution_env.tokenized_str[0]);
+pop_empty_stack_erro(line_number);
 free_all_and_exit();
 }
 
