@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * pint_error - print error message when stack is empty
+ * empty_stack_error - print error message when stack is empty
  * @line_number: line number in the Monty script
  * @opcode: opcode in the Monty script
  */
-void pint_error(unsigned int line_number, char *opcode)
+void empty_stack_error(unsigned int line_number, char *opcode)
 {
 	char *mode;
 
