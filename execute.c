@@ -61,8 +61,8 @@ line_number++;
 free(line);
 fclose(file);
 
-return EXIT_SUCCESS;
-}	
+return (EXIT_SUCCESS);
+}
 
 /**
  * check_mode - checks the mode of stack
