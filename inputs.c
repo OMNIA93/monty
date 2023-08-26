@@ -13,7 +13,7 @@ FILE *file_name(char *file_name)
 
 	if (file_pointer == NULL)
 	{
-		error_2(file_name);
+		error_2(perror);
 	}
 
 	return (file_pointer);
