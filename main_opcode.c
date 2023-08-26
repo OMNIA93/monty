@@ -16,7 +16,7 @@ char *argument = execution_env.tokenized_str[1];
 if (!execution_env.tokenized_str[1])
 push_non_integer(line_number, opcode);
 
-for (i = 0; argument[j]; j++)
+for (j = 0; argument[j]; j++)
 {
 if (!isdigit(argument[j]) && argument[0] != '-')
 push_non_integer(line_number, opcode);
