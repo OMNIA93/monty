@@ -6,7 +6,7 @@
  * Return: pointer to function to perform the opcode
  *				 or NULL if the opcode is invalid
 */
-void (*get_operate(char *opcode))(stack_t **stack, unsigned int line_number)
+void (*get_operate(char *opcode))(stack_t **stack, unsigned int line_num)
 {
 int idx;
 instruction_t instructions_arr[] = {
@@ -44,9 +44,9 @@ int execute_operate(char *file_name)
 {
 	ssize_t chars_number;
 	size_t buffer_size = 0;
-	unsigned int line_number = 0;
+	unsigned int line_num = 0;
 	char **tokenized_str;
-	void (*opcode_func)(stack_t **stack, unsigned int line_number);
+	void (*opcode_func)(stack_t **stack, unsigned int line_num);
 
 	execute_env.file_pointer = open_file(file_name);
 
