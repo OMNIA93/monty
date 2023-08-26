@@ -13,12 +13,16 @@ char *arg = execution_env.tokenized_str[1];
 if (!arg || (!isdigit(*arg) && *arg != '-'))
 {
 fprintf(stderr, "L%d: usage: push integer\n", line_number);
-free_all_and_exit(EXIT_FAILURE);
-}
-
 add_node_at_first(stack, atoi(arg));
 }
-
+void free_all_and_exit_with_success(void);
+{
+exit(EXIT_SUCCESS);
+}
+void free_all_and_exit_with_failure(void);
+{
+exit(EXIT_FAILURE);
+}
 /**
  * pall_opcode - Opcode `pall` prints all the value of the
  * stack in a Monty script
