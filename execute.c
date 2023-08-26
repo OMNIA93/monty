@@ -51,7 +51,7 @@ int execute_operate(char *file_name)
 	char **tokenized_str;
 	void (*opcode_func)(stack_t **stack, unsigned int line_num);
 
-	execute_env.file_pointer = open_file(file_name);
+	execution_env.file_pointer = open_file(file_name);
 
 	while ((chars_num = read_line(&buffer_size)) != -1)
 	{
