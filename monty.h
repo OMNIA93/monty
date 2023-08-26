@@ -83,7 +83,7 @@ char **tokenize_string(const char *delim);
 
 void update_mode(char *opcode);
 
-void (*get_operate)(char *opcode)(stack_t **stack, unsigned int line_number);
+void get_operate(stack_t **stack, unsigned int line_number);
 int execute_operate)(char *file_name);
 int check_mode(char **tokenized_str);
 
@@ -128,7 +128,6 @@ void rotr_opcode(stack_t **stack, unsigned int line_number);
 void pchar_opcode(stack_t **stack, unsigned int line_number);
 void pstr_opcode(stack_t **stack, unsigned int line_number);
 
-/** free.c functions **/
 void free_linked_list(stack_t *head);
 void free_tokenized_string(char **tokenized_str);
 void free_all_and_exit(void);
