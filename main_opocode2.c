@@ -93,7 +93,7 @@ delete_first_node(stack);
  */
 void mod_opcode(stack_t **stack, unsigned int line_number)
 {
-	int i;
+int i;
 if (get_list_length(*stack) < 2)
 {
 two_elements_error(line_number);
