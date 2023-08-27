@@ -72,10 +72,9 @@ void pop_opcode(stack_t **stack, unsigned int line_number)
 if (*stack == NULL)
 {
 empty_stack_error(line_number, execution_env.tokenized_str[0]);
-}
-
-delete_first_node(stack);
 free_all_and_exit();
+}
+delete_first_node(stack);
 }
 
 /**
