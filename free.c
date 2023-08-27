@@ -31,10 +31,10 @@ void free_tokenized_string(char **tokenized_str)
 }
 
 /**
- * free_all_and_exit - frees all the allocated memories
+ * free_and_exit - free the allocated memories
  *                     and exit the program with EXIT_FAILURE status
  */
-void free_all_and_exit(void)
+void free_and_exit(void)
 {
 	if (execution_env.stack)
 		free_linked_list(execution_env.stack);
