@@ -25,7 +25,7 @@ int value1, value2, result;
 
 if (get_list_length(*stack) < 2)
 {
-two_elements_error(line_number);
+swap_error(line_number);
 }
 value1 = (*stack)->n;
 delete_first_node(stack);
@@ -46,7 +46,7 @@ int value1, value2, result;
 
 if (get_list_length(*stack) < 2)
 {
-two_elements_error(line_number);
+swap_error(line_number);
 }
 
 value1 = (*stack)->n;
@@ -68,7 +68,7 @@ void div_opcode(stack_t **stack, unsigned int line_number)
 int value1, value2, result;
 if (get_list_length(*stack) < 2)
 {
-two_elements_error(line_number);
+swap_error(line_number);
 }
 value1 = (*stack)->n;
 delete_first_node(stack);
@@ -93,7 +93,7 @@ exit(EXIT_FAILURE);
 }
 
 i = (*stack)->n;
-two_elements_error(line_number);
+swap_error(line_number);
 
 
 delete_first_node(stack);
