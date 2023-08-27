@@ -77,13 +77,13 @@ fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 exit(EXIT_FAILURE);
 }
 
-int multiplier = (*stack)->n;
+i = (*stack)->n;
 two_elements_error(line_number);
 
-int multiplicand = (*stack)->n;
+
 delete_first_node(stack);
-int result = multiplicand * multiplier;
-(*stack)->n *= value;
+
+(*stack)->n *= i;
 }
 /**
  * mod_opcode - computes the rest of the division of the second top element
