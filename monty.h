@@ -90,12 +90,10 @@ int check_mode(char **tokenized_str);
 /** update_mode.c function **/
 void update_mode(char *opcode);
 
-/** essential_errors.c functions **/
-void usage_error(void);
-void open_error(char *file_name);
-void malloc_error(void);
+void error_1(void);
+void error_2(char *file_name);
+void error_3(void);
 
-/** opcode_errors1.c functions **/
 void invalid_instruction_error(unsigned int line_number);
 void two_elements_error(unsigned int line_number);
 
