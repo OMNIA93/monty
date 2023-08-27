@@ -53,7 +53,7 @@ print_list(*stack);
  */
 void pint_opcode(stack_t **stack, unsigned int line_number)
 {
-if (*stack == NULL) 
+if (*stack == NULL)
 {
 empty_stack_error(line_number, execution_env.tokenized_str[0]);
 }
