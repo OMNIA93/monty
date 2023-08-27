@@ -12,10 +12,10 @@ void invalid_instruction_error(unsigned int line_number)
 }
 
 /**
- * two_elements_error - prints to stderr when stack has less than 2 elements
+ * swap_error - prints to stderr when stack has less than 2 elements
  * @line_number: line number where the instruction appear in the file
 */
-void two_elements_error(unsigned int line_number)
+void swap_error(unsigned int line_number)
 {
 	char *mode;
 
