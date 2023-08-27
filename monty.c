@@ -15,5 +15,5 @@ int main(int argc, char *argv[])
 		usage_error();
 	}
 
-	return (execute_operations(argv[1]));
+	return (execute_operate(argv[1]));
 }
