@@ -71,18 +71,21 @@ add_node_at_first(stack, result);
  */
 void mul_opcode(stack_t **stack, unsigned int line_number)
 {
-	int value;
-
-	if (get_list_length(*stack) < 2)
-	{
-		two_elements_error(line_number);
-	}
-
-	value = (*stack)->n;
-	delete_first_node(stack);
-	(*stack)->n *= value;
+if (get_list_length(*stack) < 2)
+{
+fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+exit(EXIT_FAILURE);
 }
 
+int multiplier = (*stack)->n;
+pop_stack(stack);
+
+int multiplicand = (*stack)->n;
+pop_stack(stack);
+
+int result = multiplicand * multiplier;
+push_stack(stack, result);
+}
 /**
  * mod_opcode - computes the rest of the division of the second top element
  * @stack: pointer to the head of the stack
