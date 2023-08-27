@@ -47,10 +47,20 @@ int execute_operate(char *file_name)
  * @tokenized_str: tokenized string
  * Return: 1 for comment or NULL or change mode, 0 if nothing
 */
-int check_mode_comment(const char *line)
+int check_mode_comment(char **tokenized_str)
 {
-    while (*line == ' ')
-        line++;
+	if (tokenized_str[0] == NULL || tokenized_str[0][0] == COMMENT)
+	{
+		free_tokenized_string(execution_env.tokenized_str);
+		return (1);
+	}
 
-    return (*line == '#' || *line == '\0');
+	if (!strcmp(tokenized_str[0], STACK) || !strcmp(tokenized_str[0], QUEUE))
+	{
+		update_mode(tokenized_str[0]);
+		free_tokenized_string(execution_env.tokenized_str);
+		return (1);
+	}
+
+	return (0);
 }
