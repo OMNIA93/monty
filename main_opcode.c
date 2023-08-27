@@ -8,26 +8,15 @@
  */
 void push_opcode(stack_t **stack, unsigned int line_number)
 {
-	int i;
-	int number;
-	char *opcode = execution_env.tokenized_str[0];
-	char *argument = execution_env.tokenized_str[1];
+char *arg = strtok(NULL, " \t\n");
+if (!arg || !is_number(arg))
+{
+fprintf(stderr, "L%u: usage: push integer\n", line_number);
+exit(EXIT_FAILURE);
+}
 
-	if (!execution_env.tokenized_str[1])
-		push_non_integer(line_number, opcode);
-
-	for (i = 0; argument[i]; i++)
-	{
-		if (!isdigit(argument[i]) && argument[0] != '-')
-			push_non_integer(line_number, opcode);
-	}
-
-	number = atoi(argument);
-
-	if (execution_env.mode == STACK_MODE)
-		add_node_at_first(stack, number);
-	else if (execution_env.mode == QUEUE_MODE)
-		add_node_at_end(stack, number);
+int value = atoi(arg);
+push_stack(stack, value);
 }
 
 /**
