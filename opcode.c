@@ -35,6 +35,7 @@ two_elements_error(8, line_number, "sub");
 (*stack) = (*stack)->next;
 i = (*stack)->n - (*stack)->prev->n;
 (*stack)->n = i;
+delete_first_node(stack);
 free((*stack)->prev);
 (*stack)->prev = NULL;
 }
