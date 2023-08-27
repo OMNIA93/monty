@@ -20,7 +20,7 @@ int execute_operate(char *file_name)
 		line_number++;
 		execution_env.line_buffer[chars_number - 1] = '\0';
 		execution_env.tokenized_str = tokenize_str(SPACE);
-		tokenized_str = execution_env.tokenized_str;
+		tokenized_str = execution_env.tokenized_string;
 
 		if (check_mode_comment(tokenized_str))
 			continue;

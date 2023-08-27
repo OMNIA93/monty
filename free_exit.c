@@ -37,10 +37,10 @@ free(tokenized_str);
 void free_and_exit(void)
 {
 if (execution_env.stack)
-free_linked_list(execution_env.stack);
+free_list(execution_env.stack);
 
 if (execution_env.tokenized_str)
-free_tokenized_string(execution_env.tokenized_str);
+free_tokenized_str(execution_env.tokenized_str);
 
 if (execution_env.line_buffer)
 free(execution_env.line_buffer);

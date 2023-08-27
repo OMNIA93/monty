@@ -13,7 +13,7 @@ int top_value;
 
 UNUSED(line_number);
 
-if (*stack == NULL) 
+if (*stack == NULL)
 return;
 
 top_value = (*stack)->n;
