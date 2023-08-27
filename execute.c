@@ -28,15 +28,22 @@ instruction_t instructions_arr[] = {
 {NULL, NULL}
 };
 
-for (idx = 0; instructions_arr[idx].opcode; idx++)
-{
-if (!strcmp(instructions_arr[idx].opcode, opcode))
-{
-return (instructions_arr[idx].f);
+if (opcode[0] == '#')
+		return;
+
+	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
+	{
+		if (strcmp(opcode, func_list[i].opcode) == 0)
+		{
+			call_fun(func_list[i].f, opcode, value, ln, format);
+			flag = 0;
+		}
+	}
+	if (flag == 1)
+		err(3, ln, opcode);
 }
-}
-return (NULL);
-}
+
+
 
 /**
  * execute_operate - execute the operation of the corresponding opcode
