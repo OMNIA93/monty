@@ -30,9 +30,9 @@ if (get_list_length(*stack) < 2)
 two_elements_error(line_number);
 }
 
-value = (*stack)->n;
+i = (*stack)->n;
 delete_first_node(stack);
-(*stack)->n -= value;
+(*stack)->n -= i;
 }
 
 /**
