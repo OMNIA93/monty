@@ -96,6 +96,6 @@ update_mode(tokenized_str[0]);
 free_tokenized_string(execution_env.tokenized_str);
 return (1);
 }
-	
+
 return (0);
 }
