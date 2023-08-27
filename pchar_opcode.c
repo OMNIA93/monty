@@ -27,16 +27,16 @@ printf("%c\n", (*stack)->n);
  */
 void pstr_opcode(stack_t **stack, unsigned int line_number)
 {
-	stack_t *current = *stack;
+stack_t *current = *stack;
 
-	UNUSED(line_number);
+UNUSED(line_number);
 
-	while (current)
-	{
-		if (current->n == 0 || !isascii(current->n))
-			break;
-		printf("%c", current->n);
-		current = current->next;
-	}
-	printf("\n");
+while (current != NULL && current->n != 0 && isascii(current->n))
+{
+putchar(current->n);
+current = current->next;
+}
+
+putchar('\n');
+free_stack(stack);
 }
