@@ -29,17 +29,17 @@ add_node_at_first(stack, result);
 void sub_opcode(stack_t **stack, unsigned int line_number)
 {
 int value1, value2, result;
-    
+
 if (get_list_length(*stack) < 2)
 {
 two_elements_error(line_number);
 }
-    
+
 value1 = (*stack)->n;
 delete_first_node(stack);
 value2 = (*stack)->n;
 delete_first_node(stack);
-    
+
 result = value2 - value1;
 add_node_at_first(stack, result);
 }
