@@ -22,7 +22,7 @@ int execute_operate(char *file_name)
 		execution_env.tokenized_str = tokenize_string(SPACE);
 		tokenized_str = execution_env.tokenized_str;
 
-		if (check_mode(tokenized_str))
+		if (check_mode_comment(tokenized_str))
 			continue;
 
 		opcode_func = get_operate(tokenized_str[0]);
@@ -43,24 +43,14 @@ int execute_operate(char *file_name)
 }
 
 /**
- * check_mode - checks the mode of stack
+ * check_mode_comment - checks the mode of stack
  * @tokenized_str: tokenized string
  * Return: 1 for comment or NULL or change mode, 0 if nothing
 */
-int check_mode(char **tokenized_str)
+int check_mode_comment(const char *line)
 {
-	if (tokenized_str[0] == NULL || tokenized_str[0][0] == COMMENT)
-	{
-		free_tokenized_string(execution_env.tokenized_str);
-		return (1);
-	}
+    while (*line == ' ')
+        line++;
 
-	if (!strcmp(tokenized_str[0], STACK) || !strcmp(tokenized_str[0], QUEUE))
-	{
-		update_mode(tokenized_str[0]);
-		free_tokenized_string(execution_env.tokenized_str);
-		return (1);
-	}
-
-	return (0);
+    return (*line == '#' || *line == '\0');
 }
