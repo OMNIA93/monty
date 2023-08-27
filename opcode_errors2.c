@@ -28,7 +28,7 @@ void empty_stack_error(unsigned int line_number, char *opcode)
 void division_by_zero(unsigned int line_number)
 {
 	fprintf(stderr, "L%u: division by zero\n", line_number);
-	free_all_and_exit();
+	free_and_exit();
 }
 
 /**
@@ -39,7 +39,7 @@ void division_by_zero(unsigned int line_number)
 void ascii_out_of_range(unsigned int line_number, char *opcode)
 {
 	fprintf(stderr, "L%u: can't %s, value out of range\n", line_number, opcode);
-	free_all_and_exit();
+	free_and_exit();
 }
 
 /**
@@ -50,5 +50,5 @@ void ascii_out_of_range(unsigned int line_number, char *opcode)
 void push_non_integer(unsigned int line_number, char *opcode)
 {
 	fprintf(stderr, "L%d: usage: %s integer\n", line_number, opcode);
-	free_all_and_exit();
+	free_and_exit();
 }
