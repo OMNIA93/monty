@@ -8,7 +8,7 @@ void invalid_instruction_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number,
 					execution_env.tokenized_str[0]);
-	free_all_and_exit();
+	free_and_exit();
 }
 
 /**
@@ -26,5 +26,5 @@ void swap_error(unsigned int line_number)
 
 	fprintf(stderr, "L%d: can't %s, %s too short\n", line_number,
 					execution_env.tokenized_str[0], mode);
-	free_all_and_exit();
+	free_and_exit();
 }
