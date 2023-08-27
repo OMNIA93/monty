@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * execute_operate - execute the operation of the corresponding opcode
- * @tokenized_str: tokenize_string
+ * @tokenized_str: tokenized_string
  * @file_name: the file name the contains the opcode
  * Return: EXIT_SUCCESS
 */
