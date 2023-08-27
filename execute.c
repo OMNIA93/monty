@@ -44,7 +44,7 @@ int execute_operate(char *file_name)
 
 /**
  * check_mode_comment - checks the mode of stack
- * @tokenized_str : tokenized string
+ * @tokenized_str: tokenized string
  * Return: 1 for comment or NULL or change mode, 0 if nothing
 */
 int check_mode_comment(char **tokenized_str)
