@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-error_1 - prints to stderr usage error msg
+ * error_1 - prints to stderr usage error msg
 */
 void error_1(void)
 {
