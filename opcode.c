@@ -26,17 +26,17 @@ void add_opcode(stack_t **stack, unsigned int line_number)
  */
 void sub_opcode(stack_t **stack, unsigned int line_number)
 {
-	int i;
+int i;
+if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-	if (get_list_length(*stack) < 2)
-	{
-		two_elements_error(line_number);
-	}
+two_elements_error(8, line_number, "sub");
 
-	i = (*stack)->n;
 
-	delete_first_node(stack);
-	(*stack)->n -= i;
+(*stack) = (*stack)->next;
+i = (*stack)->n - (*stack)->prev->n;
+(*stack)->n = i;
+free((*stack)->prev);
+(*stack)->prev = NULL;
 }
 
 /**
