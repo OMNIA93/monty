@@ -85,6 +85,6 @@ delete_first_node(stack);
  */
 void nop_opcode(stack_t **stack, unsigned int line_number)
 {
-	UNUSED(stack);
-	UNUSED(line_number);
+	(void)stack;
+	(void)line_number;
 }
