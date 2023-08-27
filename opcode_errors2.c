@@ -18,7 +18,7 @@ void empty_stack_error(unsigned int line_number, char *opcode)
 		fprintf(stderr, "L%u: can't %s, %s empty\n", line_number, opcode, mode);
 	else if (strcmp(opcode, "pop") == 0)
 		fprintf(stderr, "L%u: can't %s an empty %s\n", line_number, opcode, mode);
-	free_all_and_exit();
+	free_and_exit();
 }
 
 /**

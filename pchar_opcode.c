@@ -38,5 +38,4 @@ current = current->next;
 }
 
 putchar('\n');
-free_stack(stack);
 }
