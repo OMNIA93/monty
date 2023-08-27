@@ -78,13 +78,12 @@ exit(EXIT_FAILURE);
 }
 
 int multiplier = (*stack)->n;
-pop_stack(stack);
+two_elements_error(line_number);
 
 int multiplicand = (*stack)->n;
-pop_stack(stack);
-
+delete_first_node(stack);
 int result = multiplicand * multiplier;
-push_stack(stack, result);
+(*stack)->n *= value;
 }
 /**
  * mod_opcode - computes the rest of the division of the second top element
