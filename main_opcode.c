@@ -8,15 +8,20 @@
  */
 void push_opcode(stack_t **stack, unsigned int line_number)
 {
+int value;
+int number;
 char *arg = strtok(NULL, " \t\n");
-if (!arg || !is_number(arg))
+if (!execution_env.tokenized_str[1])
 {
 fprintf(stderr, "L%u: usage: push integer\n", line_number);
 exit(EXIT_FAILURE);
 }
-
+	
 int value = atoi(arg);
-push_stack(stack, value);
+if (execution_env.mode == STACK_MODE)
+add_node_at_first(stack, number);
+else if (execution_env.mode == QUEUE_MODE)
+add_node_at_end(stack, number);
 }
 
 /**
