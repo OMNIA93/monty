@@ -1,33 +1,33 @@
 #include "monty.h"
 
 /**
- * free_linked_list - frees a doubly linked list.
+ * free_list - frees a doubly linked list.
  * @head: dlinked list head
 */
-void free_linked_list(stack_t *head)
+void free_list(stack_t *head)
 {
-	stack_t *tmp;
+stack_t *value;
 
-	while (head)
-	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
-	}
+while (head)
+{
+value = head;
+head = head->next;
+free(value);
+}
 }
 
 /**
- * free_tokenized_string - free an array of character pointers to tokenized str
+ * free_tokenized_str - free an array of character pointers to tokenized str
  * @tokenized_str: an array of character pointers to tokenized string
 */
-void free_tokenized_string(char **tokenized_str)
+void free_tokenized_str(char **tokenized_str)
 {
-	int idx;
+int idx;
 
-	for (idx = 0; tokenized_str[idx]; idx++)
-		free(tokenized_str[idx]);
+for (idx = 0; tokenized_str[idx]; idx++)
+free(tokenized_str[idx]);
 
-	free(tokenized_str);
+free(tokenized_str);
 }
 
 /**
@@ -36,17 +36,17 @@ void free_tokenized_string(char **tokenized_str)
  */
 void free_and_exit(void)
 {
-	if (execution_env.stack)
-		free_linked_list(execution_env.stack);
+if (execution_env.stack)
+free_linked_list(execution_env.stack);
 
-	if (execution_env.tokenized_str)
-		free_tokenized_string(execution_env.tokenized_str);
+if (execution_env.tokenized_str)
+free_tokenized_string(execution_env.tokenized_str);
 
-	if (execution_env.line_buffer)
-		free(execution_env.line_buffer);
+if (execution_env.line_buffer)
+free(execution_env.line_buffer);
 
-	if (execution_env.file_pointer)
-		fclose(execution_env.file_pointer);
+if (execution_env.file_pointer)
+fclose(execution_env.file_pointer);
 
-	exit(EXIT_FAILURE);
+exit(EXIT_FAILURE);
 }
