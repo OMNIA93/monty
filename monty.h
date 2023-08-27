@@ -95,7 +95,7 @@ void error_2(char *file_name);
 void error_3(void);
 
 void invalid_instruction_error(unsigned int line_number);
-void two_elements_error(unsigned int line_number);
+void swap_error(unsigned int line_number);
 
 /** opcode_errors2.c functions **/
 void empty_stack_error(unsigned int line_number, char *opcode);
