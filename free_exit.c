@@ -17,10 +17,10 @@ free(value);
 }
 
 /**
- * free_tokenized_str - free an array of character pointers to tokenized str
+ * free_tokenized_string - free an array of character pointers to tokenized str
  * @tokenized_str: an array of character pointers to tokenized string
 */
-void free_tokenized_str(char **tokenized_str)
+void free_tokenized_string(char **tokenized_str)
 {
 int idx;
 
