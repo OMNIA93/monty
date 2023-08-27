@@ -16,7 +16,6 @@ if (!execution_env.tokenized_str[1])
 fprintf(stderr, "L%u: usage: push integer\n", line_number);
 exit(EXIT_FAILURE);
 }
-	
 int value = atoi(arg);
 if (execution_env.mode == STACK_MODE)
 add_node_at_first(stack, number);
