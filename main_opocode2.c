@@ -56,7 +56,7 @@ two_elements_error(line_number);
 value1 = (*stack)->n;
 delete_first_node(stack);
 value2 = (*stack)->n;
-delete_first_node(stack);   
+delete_first_node(stack);
 result = value2 - value1;
 add_node_at_first(stack, result);
 }
