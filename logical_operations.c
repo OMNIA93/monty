@@ -7,25 +7,16 @@
 */
 void swap_opcode(stack_t **stack, unsigned int line_number)
 {
-	int j;
+int j;
 
-	if (get_list_length(*stack) < 2)
-	{
-		two_elements_error(line_number);
-	}
-
-	j = (*stack)->n;
-	(*stack)->n = (*stack)->next->n;
-	(*stack)->next->n = j;
-	if (j->next)
-    {
-        j->next->prev = *stack;
-    }
-    j->prev = NULL;
-    j->next = *stack;
-    (*stack)->prev = j;
-    *stack = j;
+if (get_list_length(*stack) < 2)
+{
+two_elements_error(line_number);
 }
+
+j = (*stack)->n;
+(*stack)->n = (*stack)->next->n;
+(*stack)->next->n = j;
 }
 
 /**
