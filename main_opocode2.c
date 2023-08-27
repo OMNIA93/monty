@@ -1,5 +1,19 @@
 #include "monty.h"
-
+/**
+ * pop_opcode - Opcode `pop` removes the top of stack in a Monty script
+ * @stack: double pointer to the stack structure stack_t
+ *         It represents the address of the top element of the stack
+ * @line_number: line number in the Monty script
+ */
+void pop_opcode(stack_t **stack, unsigned int line_number)
+{
+if (*stack == NULL)
+{
+empty_stack_error(line_number, execution_env.tokenized_str[0]);
+free_all_and_exit();
+}
+delete_first_node(stack);
+}
 /**
  * add_opcode - adds the top two elements of the stack
  * @stack: pointer to the head of the stack
@@ -85,24 +99,4 @@ two_elements_error(line_number);
 delete_first_node(stack);
 
 (*stack)->n *= i;
-}
-/**
- * mod_opcode - computes the rest of the division of the second top element
- * @stack: pointer to the head of the stack
- * @line_number: line number in the Monty script
- */
-void mod_opcode(stack_t **stack, unsigned int line_number)
-{
-int i;
-if (get_list_length(*stack) < 2)
-{
-two_elements_error(line_number);
-}
-if ((*stack)->n == 0)
-{
-division_by_zero(line_number);
-}
-i = (*stack)->n;
-delete_first_node(stack);
-(*stack)->n %= i;
 }
