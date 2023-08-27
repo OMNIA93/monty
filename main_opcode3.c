@@ -9,7 +9,7 @@ void mod_opcode(stack_t **stack, unsigned int line_number)
 int i;
 if (get_list_length(*stack) < 2)
 {
-two_elements_error(line_number);
+swap_error(line_number);
 }
 if ((*stack)->n == 0)
 {
@@ -43,7 +43,7 @@ int j;
 
 if (get_list_length(*stack) < 2)
 {
-two_elements_error(line_number);
+swap_error(line_number);
 }
 
 j = (*stack)->n;
