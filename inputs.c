@@ -47,7 +47,7 @@ char **tokenize_str(const char *delim)
 	char **tokenized_str = NULL;
 	int idx = 0;
 
-	tokenized_str = malloc(sizeof(char *) * MAX_TOKENIZED_SIZE);
+	tokenized_string = malloc(sizeof(char *) * MAX_TOKENIZED_SIZE);
 	if (tokenized_str == NULL)
 	{
 		error_3();
