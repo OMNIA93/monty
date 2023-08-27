@@ -38,14 +38,13 @@ add_node_at_end(stack, number);
  */
 void pall_opcode(stack_t **stack, unsigned int line_number)
 {
-	UNUSED(line_number);
-
-	if (!stack || !*stack)
-		return;
-
-	print_list(*stack);
+stack_t *current = *stack;
+while (current)
+{
+printf("%d\n", current->n);
+current = current->next;
 }
-
+}
 /**
  * pint_opcode - Opcode `pint` prints the top of stack in a Monty script
  * @stack: double pointer to the stack structure stack_t
