@@ -93,11 +93,11 @@ delete_first_node(stack);
  */
 void mod_opcode(stack_t **stack, unsigned int line_number)
 {
-if (get_list_length(*stack) < 2)    
+if (get_list_length(*stack) < 2)  
 {
 fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 exit(EXIT_FAILURE);
-two_elements_error(line_number); 
+two_elements_error(line_number);
 }
 int i = (*stack)->n;
 if
@@ -107,6 +107,6 @@ if
 fprintf(stderr, "L%u: division by zero\n", line_number);
 }
 delete_first_node(stack);
-int i = (*stack)->n;  
-int result = dividend % i;    
+int i = (*stack)->n;
+int result = dividend % i;
 }
