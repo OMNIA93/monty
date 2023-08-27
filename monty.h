@@ -83,9 +83,9 @@ ssize_t read_line(size_t *buffer_size);
 char **tokenize_string(const char *delim);
 
 /** execute_instructions.c functions **/
-void (*get_operation(char *opcode))(stack_t **stack, unsigned int line_number);
-int execute_operations(char *file_name);
-int check_mode_comment(char **tokenized_str);
+void (*get_operate(char *opcode))(stack_t **stack, unsigned int line_number);
+int execute_operate(char *file_name);
+int check_mode(char **tokenized_str);
 
 /** update_mode.c function **/
 void update_mode(char *opcode);
