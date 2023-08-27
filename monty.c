@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		usage_error();
+		error_1();
 	}
 
 	return (execute_operate(argv[1]));
