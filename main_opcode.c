@@ -53,15 +53,13 @@ print_list(*stack);
  */
 void pint_opcode(stack_t **stack, unsigned int line_number)
 {
-if (*stack == NULL)
+if (!stack || !*stack)
 {
 empty_stack_error(line_number, execution_env.tokenized_str[0]);
 free_all_and_exit();
 }
-
 delete_first_node(stack);
 }
-
 /**
  * pop_opcode - Opcode `pop` removes the top of stack in a Monty script
  * @stack: double pointer to the stack structure stack_t
