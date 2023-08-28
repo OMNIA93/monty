@@ -27,7 +27,7 @@ int execute_operate(char *file_name)
 		opcode_func = get_operate(tokenized_str[0]);
 		if (opcode_func == NULL)
 		{
-			invalid_instruction_error(line_number);
+			invalid_error(line_number);
 		}
 		opcode_func(&execution_env.stack, line_number);
 
