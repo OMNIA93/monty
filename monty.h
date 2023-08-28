@@ -77,11 +77,12 @@ typedef struct execution_env
 
 extern execution_env_t execution_env;
 
+char **tokenize_string(const char *delim);
 FILE *open_file(char *file_name);
 ssize_t read_line(size_t *buffer_size);
-char **tokenize_string(const char *delim);
 
 void (*get_operate(char *opcode))(stack_t **stack, unsigned int line_number);
+
 int execute_operate(char *file_name);
 int check_mode_comment(char **tokenized_str);
 
@@ -91,13 +92,13 @@ void error_1(void);
 void error_2(char *file_name);
 void error_3(void);
 
-void invalid_error(unsigned int line_number);
 void swap_error(unsigned int line_number);
+void invalid_error(unsigned int line_number);
 
-void empty_error(unsigned int line_number, char *opcode);
-void div_zero(unsigned int line_number);
 void ascii_out(unsigned int line_number, char *opcode);
 void push_non_integer(unsigned int line_number, char *opcode);
+void empty_error(unsigned int line_number, char *opcode);
+void div_zero(unsigned int line_number);
 
 void print_list(const stack_t *head);
 size_t get_list_length(const stack_t *head);
@@ -109,24 +110,25 @@ stack_t *delete_first_node(stack_t **head);
 void push_opcode(stack_t **stack, unsigned int line_number);
 void pall_opcode(stack_t **stack, unsigned int line_number);
 void pint_opcode(stack_t **stack, unsigned int line_number);
-void pop_opcode(stack_t **stack, unsigned int line_number);
-void nop_opcode(stack_t **stack, unsigned int line_number);
 
+void mod_opcode(stack_t **stack, unsigned int line_number);
+void nop_opcode(stack_t **stack, unsigned int line_number);
+void swap_opcode(stack_t **stack, unsigned int line_number);
+
+void pop_opcode(stack_t **stack, unsigned int line_number);
 void add_opcode(stack_t **stack, unsigned int line_number);
 void sub_opcode(stack_t **stack, unsigned int line_number);
 void div_opcode(stack_t **stack, unsigned int line_number);
 void mul_opcode(stack_t **stack, unsigned int line_number);
-void mod_opcode(stack_t **stack, unsigned int line_number);
 
-void swap_opcode(stack_t **stack, unsigned int line_number);
-void rotl_opcode(stack_t **stack, unsigned int line_number);
 void rotr_opcode(stack_t **stack, unsigned int line_number);
+void rotl_opcode(stack_t **stack, unsigned int line_number);
 
-void pchar_opcode(stack_t **stack, unsigned int line_number);
 void pstr_opcode(stack_t **stack, unsigned int line_number);
+void pchar_opcode(stack_t **stack, unsigned int line_number);
 
+void free_and_exit(void);
 void free_list(stack_t *head);
 void free_tokenized_string(char **tokenized_str);
-void free_and_exit(void);
 
 #endif
