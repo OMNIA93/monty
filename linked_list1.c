@@ -2,8 +2,8 @@
 
 /**
  * get_end_node - get the address of the last node
- * @first: pointer to the first of the list
- * Return: address of last node
+ * @head: pointer to the first of the list
+ * Return: address of end node
  */
 stack_t *get_end_node(stack_t **head)
 {
@@ -17,7 +17,7 @@ stack_t *get_end_node(stack_t **head)
 
 /**
  * add_node_at_last - adds a new node at the end of a list
- * @first: pointer to the first of the list
+ * @head: pointer to the first of the list
  * @n: data to be inserted
  * Return: the address of the new element, or NULL if it failed
  */
@@ -72,7 +72,7 @@ size_t get_length(const stack_t *head)
 
 /**
  * add_node_at_head - adds a new node at the beginning of a list
- * @first: pointer to thefirst of the list
+ * @head: pointer to thefirst of the list
  * @n: data to be inserted
  * Return: the address of the new element, or NULL if it failed
  */
