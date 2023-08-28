@@ -13,7 +13,7 @@ swap_error(line_number);
 }
 if ((*stack)->n == 0)
 {
-division_by_zero(line_number);
+div_zero(line_number);
 }
 i = (*stack)->n;
 delete_first_node(stack);
