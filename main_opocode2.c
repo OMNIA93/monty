@@ -86,7 +86,7 @@ add_node_at_last(stack, result);
 void mul_opcode(stack_t **stack, unsigned int line_number)
 {
 int i;
-if (get_list_length(*stack) < 2)
+if (get_length(*stack) < 2)
 {
 fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 exit(EXIT_FAILURE);
