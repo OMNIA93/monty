@@ -23,7 +23,7 @@ void add_opcode(stack_t **stack, unsigned int line_number)
 {
 int value1, value2, result;
 
-if (get_list_length(*stack) < 2)
+if (get_length(*stack) < 2)
 {
 swap_error(line_number);
 }
