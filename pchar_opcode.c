@@ -13,15 +13,12 @@ UNUSED(line_number);
 
 while (current != NULL && current->n != 0 && isascii(current->n))
 {
-<<<<<<< HEAD
-ascii_out(line_number, execution_env.tokenized_str[0]);
-=======
-putchar(current->n);
+if (current->n == 0 || !isascii(current->n))
+break;
+printf("%c", current->n);
 current = current->next;
->>>>>>> 543872e91f9d8f22f65933ca9dc97bc48dcf7539
 }
-
-putchar('\n');
+printf("\n");
 }
 
 /**
@@ -38,7 +35,7 @@ empty_error(line_number, execution_env.tokenized_str[0]);
 
 if (!isascii((*stack)->n))
 {
-ascii_out_of_range(line_number, execution_env.tokenized_str[0]);
+ascii_out(line_number, execution_env.tokenized_str[0]);
 }
 
 printf("%c\n", (*stack)->n);
