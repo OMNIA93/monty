@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
- * invalid_instruction_error - prints to stderr when the opcode is inavlid
+ * invalid_error - prints to stderr when the opcode is inavlid
  * @line_number: line number where the instruction appear in the file
 */
-void invalid_instruction_error(unsigned int line_number)
+void invalid_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number,
 					execution_env.tokenized_str[0]);
