@@ -137,7 +137,6 @@ void pstr_opcode(stack_t **stack, unsigned int line_number);
 /** free.c functions **/
 void free_list(stack_t *head);
 void free_tokenized_string(char **tokenized_str);
-void free_tokenize_string(char **tokenize_str);
 void free_and_exit(void);
 
 #endif
