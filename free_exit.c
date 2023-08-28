@@ -1,6 +1,27 @@
 #include "monty.h"
 
 /**
+ * free_and_exit - free the allocated memories
+ *                     and exit the program with EXIT_FAILURE status
+ */
+void free_and_exit(void)
+{
+if (execution_env.stack)
+free_list(execution_env.stack);
+
+if (execution_env.tokenized_str)
+free_tokenized_string(execution_env.tokenized_str);
+
+if (execution_env.line_buffer)
+free(execution_env.line_buffer);
+
+if (execution_env.file_pointer)
+fclose(execution_env.file_pointer);
+
+exit(EXIT_FAILURE);
+}
+
+/**
  * free_list - frees a doubly linked list.
  * @head: dlinked list head
 */
@@ -28,25 +49,4 @@ for (idx = 0; tokenized_str[idx]; idx++)
 free(tokenized_str[idx]);
 
 free(tokenized_str);
-}
-
-/**
- * free_and_exit - free the allocated memories
- *                     and exit the program with EXIT_FAILURE status
- */
-void free_and_exit(void)
-{
-if (execution_env.stack)
-free_list(execution_env.stack);
-
-if (execution_env.tokenized_str)
-free_tokenized_string(execution_env.tokenized_str);
-
-if (execution_env.line_buffer)
-free(execution_env.line_buffer);
-
-if (execution_env.file_pointer)
-fclose(execution_env.file_pointer);
-
-exit(EXIT_FAILURE);
 }
