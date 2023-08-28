@@ -25,9 +25,9 @@ push_non_integer(line_number, opcode);
 number = atoi(argument);
 
 if (execution_env.mode == STACK_MODE)
-add_node_at_first(stack, number);
+add_node_at_head(stack, number);
 else if (execution_env.mode == QUEUE_MODE)
-add_node_at_end(stack, number);
+add_node_at_last(stack, number);
 }
 /**
  * pall_opcode - Opcode `pall` prints all the value of the
