@@ -1,6 +1,28 @@
 #include "monty.h"
 
 /**
+ * ascii_out - print error message when ascii out of range
+ * @line_number: line number in the Monty script
+ * @opcode: opcode in the Monty script
+ */
+void ascii_out(unsigned int line_number, char *opcode)
+{
+	fprintf(stderr, "L%u: can't %s, value out of range\n", line_number, opcode);
+	free_and_exit();
+}
+
+/**
+ * push_non_integer - print error message when pushes non integer value
+ * @line_number: line number in the Monty script
+ * @opcode: opcode in the Monty script
+ */
+void push_non_integer(unsigned int line_number, char *opcode)
+{
+	fprintf(stderr, "L%d: usage: %s integer\n", line_number, opcode);
+	free_and_exit();
+}
+
+/**
  * empty_error - print error message when stack is empty
  * @line_number: line number in the Monty script
  * @opcode: opcode in the Monty script
@@ -28,27 +50,5 @@ void empty_error(unsigned int line_number, char *opcode)
 void div_zero(unsigned int line_number)
 {
 	fprintf(stderr, "L%u: divison by zero\n", line_number);
-	free_and_exit();
-}
-
-/**
- * ascii_out - print error message when ascii out of range
- * @line_number: line number in the Monty script
- * @opcode: opcode in the Monty script
- */
-void ascii_out(unsigned int line_number, char *opcode)
-{
-	fprintf(stderr, "L%u: can't %s, value out of range\n", line_number, opcode);
-	free_and_exit();
-}
-
-/**
- * push_non_integer - print error message when pushes non integer value
- * @line_number: line number in the Monty script
- * @opcode: opcode in the Monty script
- */
-void push_non_integer(unsigned int line_number, char *opcode)
-{
-	fprintf(stderr, "L%d: usage: %s integer\n", line_number, opcode);
 	free_and_exit();
 }
