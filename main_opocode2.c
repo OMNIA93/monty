@@ -32,7 +32,7 @@ delete_first_node(stack);
 value2 = (*stack)->n;
 delete_first_node(stack);
 result = value1 + value2;
-add_node_at_first(stack, result);
+add_node_at_last(stack, result);
 }
 
 /**
