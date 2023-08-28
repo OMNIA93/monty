@@ -100,13 +100,6 @@ void push_non_integer(unsigned int line_number, char *opcode);
 void empty_error(unsigned int line_number, char *opcode);
 void div_zero(unsigned int line_number);
 
-void print_list(const stack_t *head);
-size_t get_list_length(const stack_t *head);
-stack_t *add_node_at_first(stack_t **head, int n);
-stack_t *get_last_node(stack_t **head);
-stack_t *add_node_at_end(stack_t **head, int n);
-stack_t *delete_first_node(stack_t **head);
-
 void push_opcode(stack_t **stack, unsigned int line_number);
 void pall_opcode(stack_t **stack, unsigned int line_number);
 void pint_opcode(stack_t **stack, unsigned int line_number);
