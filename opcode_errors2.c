@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * empty_stack_error - print error message when stack is empty
+ * empty_error - print error message when stack is empty
  * @line_number: line number in the Monty script
  * @opcode: opcode in the Monty script
  */
@@ -22,21 +22,21 @@ void empty_error(unsigned int line_number, char *opcode)
 }
 
 /**
- * division_by_zero - print error message when division by zero
+ * div_zero - print error message when division by zero
  * @line_number: line number in the Monty script
  */
-void division_by_zero(unsigned int line_number)
+void div_zero(unsigned int line_number)
 {
-	fprintf(stderr, "L%u: division by zero\n", line_number);
+	fprintf(stderr, "L%u: divison by zero\n", line_number);
 	free_and_exit();
 }
 
 /**
- * ascii_out_of_range - print error message when ascii out of range
+ * ascii_out - print error message when ascii out of range
  * @line_number: line number in the Monty script
  * @opcode: opcode in the Monty script
  */
-void ascii_out_of_range(unsigned int line_number, char *opcode)
+void ascii_out(unsigned int line_number, char *opcode)
 {
 	fprintf(stderr, "L%u: can't %s, value out of range\n", line_number, opcode);
 	free_and_exit();
