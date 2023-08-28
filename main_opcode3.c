@@ -7,7 +7,7 @@
 void mod_opcode(stack_t **stack, unsigned int line_number)
 {
 int i;
-if (get_list_length(*stack) < 2)
+if (get_length(*stack) < 2)
 {
 swap_error(line_number);
 }
