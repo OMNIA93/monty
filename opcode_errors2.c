@@ -5,7 +5,7 @@
  * @line_number: line number in the Monty script
  * @opcode: opcode in the Monty script
  */
-void empty_stack_error(unsigned int line_number, char *opcode)
+void empty_error(unsigned int line_number, char *opcode)
 {
 	char *mode;
 
