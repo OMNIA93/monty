@@ -1,42 +1,6 @@
 #include "monty.h"
 
 /**
- * open_file - opnens the file
- * @file_name: file name
- * Return: FILE pointer of the opened file
-*/
-FILE *open_file(char *file_name)
-{
-	FILE *file_pointer;
-
-	file_pointer = fopen(file_name, "r");
-
-	if (file_pointer == NULL)
-	{
-		error_2(file_name);
-	}
-
-	return (file_pointer);
-}
-
-/**
- * read_line - reads line from file using file pointer
- * @buffer_size: size of the buffer
- * Return: number of characters tha have been read or -1 on failure
-*/
-ssize_t read_line(size_t *buffer_size)
-{
-	ssize_t characters;
-
-	characters = getline(&execution_env.line_buffer,
-						 buffer_size,
-						 execution_env.file_pointer);
-
-	return (characters);
-}
-
-
-/**
  * tokenize_string - tokenize a string according to a delimiter
  * @delim: space delimiter
  * Return: array of pointer characters to the tokenized string
@@ -69,4 +33,39 @@ char **tokenize_string(const char *delim)
 
 	tokenized_str[idx] = NULL;
 	return (tokenized_str);
+}
+
+/**
+ * open_file - opnens the file
+ * @file_name: file name
+ * Return: FILE pointer of the opened file
+*/
+FILE *open_file(char *file_name)
+{
+	FILE *file_pointer;
+
+	file_pointer = fopen(file_name, "r");
+
+	if (file_pointer == NULL)
+	{
+		error_2(file_name);
+	}
+
+	return (file_pointer);
+}
+
+/**
+ * read_line - reads line from file using file pointer
+ * @buffer_size: size of the buffer
+ * Return: number of characters tha have been read or -1 on failure
+*/
+ssize_t read_line(size_t *buffer_size)
+{
+	ssize_t characters;
+
+	characters = getline(&execution_env.line_buffer,
+						 buffer_size,
+						 execution_env.file_pointer);
+
+	return (characters);
 }
