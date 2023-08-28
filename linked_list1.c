@@ -39,7 +39,7 @@ stack_t *add_node_at_last(stack_t **head, const int n)
 		return (*head);
 	}
 
-	last = get_last_node(head);
+	last = get_end_node(head);
 	new_node->prev = last;
 	last->next = new_node;
 
@@ -87,7 +87,7 @@ stack_t *add_node_at_head(stack_t **head, const int n)
 	new_node->prev = NULL;
 	new_node->next = *head;
 
-	if (!*first)
+	if (!*head)
 	{
 		*head = new_node;
 		return (*head);
