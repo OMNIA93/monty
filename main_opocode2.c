@@ -55,7 +55,7 @@ value2 = (*stack)->n;
 delete_first_node(stack);
 
 result = value2 - value1;
-add_node_at_first(stack, result);
+add_node_at_last(stack, result);
 }
 
 /**
