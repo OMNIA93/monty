@@ -41,7 +41,7 @@ void swap_opcode(stack_t **stack, unsigned int line_number)
 {
 int j;
 
-if (get_list_length(*stack) < 2)
+if (get_length(*stack) < 2)
 {
 swap_error(line_number);
 }
