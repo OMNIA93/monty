@@ -102,11 +102,12 @@ void div_zero(unsigned int line_number);
 
 stack_t *get_end_node(stack_t **head);
 stack_t *add_node_at_last(stack_t **head, int n);
-void print_list(const stack_t *head);
 size_t get_length(const stack_t *head);
 stack_t *add_node_at_head(stack_t **head, int n);
 
+void print_list(const stack_t *head);
 stack_t *delete_first_node(stack_t **head);
+
 void push_opcode(stack_t **stack, unsigned int line_number);
 void pall_opcode(stack_t **stack, unsigned int line_number);
 void pint_opcode(stack_t **stack, unsigned int line_number);
