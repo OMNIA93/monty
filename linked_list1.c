@@ -1,64 +1,11 @@
 #include "monty.h"
 
 /**
- * get_list_length - calculate the number of nodes
- * @head: head of the list
- * Return: number of elements
- */
-size_t get_list_length(const stack_t *head)
-{
-	const stack_t *current;
-	size_t nodes_number = 0;
-
-	if (!head)
-		return (0);
-
-	current = head;
-
-	while (current != NULL)
-	{
-		current = current->next;
-		nodes_number++;
-	}
-
-	return (nodes_number);
-}
-
-/**
- * add_node_at_first - adds a new node at the beginning of a list
- * @head: pointer to the head of the list
- * @n: data to be inserted
- * Return: the address of the new element, or NULL if it failed
- */
-stack_t *add_node_at_first(stack_t **head, const int n)
-{
-	stack_t *new_node = malloc(sizeof(stack_t));
-
-	if (!new_node)
-		return (NULL);
-
-	new_node->n = n;
-	new_node->prev = NULL;
-	new_node->next = *head;
-
-	if (!*head)
-	{
-		*head = new_node;
-		return (*head);
-	}
-
-	(*head)->prev = new_node;
-	*head = new_node;
-
-	return (*head);
-}
-
-/**
- * get_last_node - get the address of the last node
- * @head: pointer to the head of the list
+ * get_end_node - get the address of the last node
+ * @first: pointer to the first of the list
  * Return: address of last node
  */
-stack_t *get_last_node(stack_t **head)
+stack_t *get_end_node(stack_t **head)
 {
 	stack_t *current = *head;
 
@@ -69,12 +16,12 @@ stack_t *get_last_node(stack_t **head)
 }
 
 /**
- * add_node_at_end - adds a new node at the end of a list
- * @head: pointer to the head of the list
+ * add_node_at_last - adds a new node at the end of a list
+ * @first: pointer to the first of the list
  * @n: data to be inserted
  * Return: the address of the new element, or NULL if it failed
  */
-stack_t *add_node_at_end(stack_t **head, const int n)
+stack_t *add_node_at_last(stack_t **head, const int n)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 	stack_t *last;
@@ -95,6 +42,59 @@ stack_t *add_node_at_end(stack_t **head, const int n)
 	last = get_last_node(head);
 	new_node->prev = last;
 	last->next = new_node;
+
+	return (*head);
+}
+
+/**
+ * get_length - calculate the number of nodes
+ * @head: head of the list
+ * Return: number of elements
+ */
+size_t get_length(const stack_t *head)
+{
+	const stack_t *current;
+	size_t nodes_number = 0;
+
+	if (!head)
+		return (0);
+
+	current = head;
+
+	while (current != NULL)
+	{
+		current = current->next;
+		nodes_number++;
+	}
+
+	return (nodes_number);
+}
+
+/**
+ * add_node_at_head - adds a new node at the beginning of a list
+ * @first: pointer to thefirst of the list
+ * @n: data to be inserted
+ * Return: the address of the new element, or NULL if it failed
+ */
+stack_t *add_node_at_head(stack_t **head, const int n)
+{
+	stack_t *new_node = malloc(sizeof(stack_t));
+
+	if (!new_node)
+		return (NULL);
+
+	new_node->n = n;
+	new_node->prev = NULL;
+	new_node->next = *head;
+
+	if (!*first)
+	{
+		*head = new_node;
+		return (*head);
+	}
+
+	(*head)->prev = new_node;
+	*head = new_node;
 
 	return (*head);
 }
