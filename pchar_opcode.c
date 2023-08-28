@@ -14,7 +14,7 @@ empty_error(line_number, execution_env.tokenized_str[0]);
 
 if (!isascii((*stack)->n))
 {
-ascii_out_of_range(line_number, execution_env.tokenized_str[0]);
+ascii_out(line_number, execution_env.tokenized_str[0]);
 }
 
 printf("%c\n", (*stack)->n);
