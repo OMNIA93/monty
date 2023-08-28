@@ -34,8 +34,8 @@ stack_t *delete_first_node(stack_t **first)
 		return (NULL);
 
 	*first = (*first)->next;
-	if (*head != NULL)
-		(*head)->prev = NULL;
+	if (*first != NULL)
+		(*first)->prev = NULL;
 
 	first->next = NULL;
 	free(first);
