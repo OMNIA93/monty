@@ -25,7 +25,7 @@ int execute_operate(char *file_name)
 		if (check_mode_comment(tokenized_str))
 			continue;
 
-		opcode_func = get_operation(tokenized_str[0]);
+		opcode_func = get_operate(tokenized_str[0]);
 		if (opcode_func == NULL)
 		{
 			invalid_instruction_error(line_number);
@@ -36,7 +36,7 @@ int execute_operate(char *file_name)
 	}
 
 	free(execution_env.line_buffer);
-	free_linked_list(execution_env.stack);
+	free_list(execution_env.stack);
 	fclose(execution_env.file_pointer);
 
 	return (EXIT_SUCCESS);
