@@ -37,11 +37,11 @@ ssize_t read_line(size_t *buffer_size)
 
 
 /**
- * tokenize_str - tokenize a string according to a delimiter
+ * tokenize_string - tokenize a string according to a delimiter
  * @delim: space delimiter
  * Return: array of pointer characters to the tokenized string
 */
-char **tokenize_str(const char *delim)
+char **tokenize_string(const char *delim)
 {
 	char *token = NULL;
 	char **tokenized_str = NULL;
